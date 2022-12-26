@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {toast} from "react-toastify";
 import { registerUser, validateEmail } from '../../services/authService';
+import { useDispatch } from 'react-redux';
+import { SET_LOGIN, SET_NAME } from '../../redux/features/auth/authSlice';
+import Loader from '../../component/loader/Loader';
 
 
 const initialState ={
@@ -14,19 +17,21 @@ const initialState ={
 }
 
 const Register = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setformData] = useState(initialState);
-  const {name, email, password,password2} = formData;
+  const {name, email, password, password2} = formData;
 
   const handleInputChange = (e) => {
     const {name, value} = e.target;
-    setformData({ ...formData, [name]: value})
+    setformData ({ ...formData, [name]: value})
   }
 
   const register = async(e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password ) {
       return toast.error("All field are required")
     }
 
@@ -48,16 +53,18 @@ const Register = () => {
     setIsLoading(true)
     try {
       const data = await registerUser(userData)
-      console.log(data);
+      await dispatch(SET_LOGIN(true))
+      await dispatch(SET_NAME(data.name))
+      navigate("/dashboard")
       setIsLoading(false)
     } catch (error) {
-    setIsLoading(false)
-    console.log(error.message);
+      setIsLoading(false)
     }
   }
 
   return (
     <div className="hero min-h-screen" style={{background:"var(--color-l-green)"}}>
+      {isLoading && <Loader />}
     <div className="hero-content flex-col " style={{background:"var(--color-l-green)"}}>
       <div className="text-center" style={{background:"var(--color-l-green)", color:"var(--color-black)"}}>
         <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)"}}>Register now!</h1>
