@@ -1,7 +1,10 @@
 import React from 'react';
 import { RiProductHuntLine } from "react-icons/ri"
 import { Link }from "react-router-dom";
-import Homepic from '../../assets/home.jpg'
+import Homepic from '../../assets/home.jpg';
+import { ShowOnLogin, ShowOnLogout } from '../../component/protect/HiddenLinks';
+
+
 
 const home = () => {
   return (   
@@ -15,9 +18,15 @@ const home = () => {
         </div>
         <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
+                <ShowOnLogout>
                 <li><Link to='/register' style={{border:"1px solid", marginLeft:"10px", background:"var(--color-l-green)"}}>Register</Link></li>
+                </ShowOnLogout>
+                <ShowOnLogout>
                 <li><Link to='/login' style={{border:"1px solid", marginLeft:"10px", background:"var(--color-l-green)"}}>Login</Link></li>
+                </ShowOnLogout>
+                <ShowOnLogin>
                 <li><Link to='/dashboard' style={{border:"1px solid", marginLeft:"10px", background:"var(--color-l-green)"}}>Dashboard</Link></li>
+                </ShowOnLogin>
             </ul>
         </div>
         </div>

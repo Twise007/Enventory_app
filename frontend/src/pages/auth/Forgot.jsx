@@ -50,8 +50,8 @@ const Forgot = () => {
         </div>
       </div>
       </form>
+    </div>
   </div>
-</div>
   )
 }
 
