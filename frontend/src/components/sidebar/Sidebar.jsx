@@ -17,7 +17,6 @@ const Sidebar = ({children}) => {
   ]
 
   return (
-    <>
   <div className='flex'>
     <div className={` min-h-screen ${open ? "w-72" : "w-16"} duration-500 `} style={{background:"var(--color-l-green)"}}>
       <div className="py-5 px-5 flex justify-end" style={{background:"var(--color-green)"}}>
@@ -54,7 +53,6 @@ const Sidebar = ({children}) => {
       <Layout/>
     </div>
   </div>
-  </>
   )
 }
 

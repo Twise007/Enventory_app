@@ -12,8 +12,6 @@ import { getProducts } from '../../redux/features/product/productService'
 const Dashboard = () => {
   useRedirectLoggedOutUser("/login")
 
-
-
   return (
     <div className="bg-primary-content" >
       <h2>Dashboard</h2>
@@ -22,4 +20,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;

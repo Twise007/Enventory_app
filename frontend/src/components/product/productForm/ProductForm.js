@@ -1,25 +1,25 @@
-import React from 'react'
+import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const ProductForm = ({
   product,
-  productImage, 
-  imagePreview, 
-  description, 
-  setDescription, 
+  productImage,
+  imagePreview,
+  description,
+  setDescription,
   handleInputChange,
   handleImageChange,
   saveProduct,
 }) => {
   return (
-    <div className="hero">
+    <div className="hero p-12">
       <form onSubmit={saveProduct}>
       <div className="card flex-shrink-0 shadow-2xl">
       <div className="card-body m-5">
         <div className="form-control m-2 w-96">
           <label className="label" style={{color:"var(--color-black)"}}>
-            <span>Product Image</span>
+            <span>Product Image:</span>
           </label>
           {imagePreview != null ? (
             <div className="card w-96 shadow-xl">
@@ -42,7 +42,7 @@ const ProductForm = ({
           </label>
           <label className="input-group">
             <span style={{background:"var(--color-green)", color:"var(--color-white)"}}>Product name</span>
-            <input type="text" placeholder="Product name" name='name' value={product?.name} onChange = {handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
+            <input type="text" placeholder="Product name" name='name' value={product?.name} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
           </label>
         </div>
       
@@ -53,7 +53,7 @@ const ProductForm = ({
           </label>
           <label className="input-group">
             <span style={{background:"var(--color-green)", color:"var(--color-white)"}}>Category</span>
-            <input type="text" placeholder="Category" name='category' value={product?.category} onChange = {handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
+            <input type="text" placeholder="Category" name='category' value={product?.category} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
           </label>
         </div>
       
