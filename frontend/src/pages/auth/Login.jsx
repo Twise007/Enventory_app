@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { loginUser, validateEmail } from '../../services/authService';
 import { useDispatch } from 'react-redux';
 import { SET_LOGIN, SET_NAME } from '../../redux/features/auth/authSlice';
-import Loader from '../../component/loader/Loader';
+import Loader from '../../components/loader/Loader';
 
 
 

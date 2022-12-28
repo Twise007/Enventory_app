@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BrowserRouter, Routes, Route} from "react-router-dom"
-import Layout from "./component/layout/Layout";
-import Sidebar from "./component/sidebar/Sidebar";
+import Layout from "./components/layout/Layout";
+import Sidebar from "./components/sidebar/Sidebar";
 import Forgot from "./pages/auth/Forgot";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getLoginStatus } from "./services/authService";
 import { SET_LOGIN } from "./redux/features/auth/authSlice";
+import AddProduct from "./pages/addProduct/AddProduct";
 
 axios.defaults.withCredentials =true;
 
@@ -42,11 +43,19 @@ function App() {
       <Route path="/resetpassword/:resetToken" element={<Reset />} />
 
       <Route path="/dashboard" element={
-      <Sidebar>
-        <Layout>
-          <Dashboard />
-        </Layout>
-      </Sidebar>
+        <Sidebar>
+          <Layout>
+            <Dashboard />
+          </Layout>
+        </Sidebar>
+      }/>
+
+      <Route path="/add-product" element={
+        <Sidebar>
+          <Layout>
+            <AddProduct />
+          </Layout>
+        </Sidebar>
       }/>
     </Routes>
     </BrowserRouter>

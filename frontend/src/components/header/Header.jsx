@@ -25,7 +25,7 @@ const Header = () => {
     </div>
     <div className="navbar-end" onClick={logout}>
       <btn className="btn" style={{border:"1px solid", background:"var(--color-green)", color:"var(--color-l-green)"}}>Log Out</btn>
-  </div>
+    </div>
   </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { RiProductHuntLine } from "react-icons/ri"
 import { Link }from "react-router-dom";
 import Homepic from '../../assets/home.jpg';
-import { ShowOnLogin, ShowOnLogout } from '../../component/protect/HiddenLinks';
+import { ShowOnLogin, ShowOnLogout } from '../../components/protect/HiddenLinks';
 
 
 
