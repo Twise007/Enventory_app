@@ -1,11 +1,11 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+//import { useEffect } from 'react'
+//import { useDispatch, useSelector } from 'react-redux'
 import ProductForm from '../../components/product/productForm/ProductForm'
-import ProductList from '../../components/product/productList/ProductList'
+//import ProductList from '../../components/product/productList/ProductList'
 import useRedirectLoggedOutUser from '../../customHook/useRedirectLoggedOutUser'
-import { selectisLoggedIn } from '../../redux/features/auth/authSlice'
-import { getProducts } from '../../redux/features/product/productService'
+//import { selectisLoggedIn } from '../../redux/features/auth/authSlice'
+//import { getProducts } from '../../redux/features/product/productService'
 
 
 

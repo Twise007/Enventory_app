@@ -23,7 +23,7 @@ const ProductForm = ({
           </label>
           {imagePreview != null ? (
             <div className="card w-96 shadow-xl">
-              <figure><img src={imagePreview} alt="product image" /></figure>
+              <figure><img src={imagePreview} alt="product" /></figure>
             </div>
           ) : (
           <p>No image set for this product.</p>
