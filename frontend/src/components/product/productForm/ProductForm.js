@@ -2,6 +2,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+
 const ProductForm = ({
   product,
   productImage,
@@ -13,7 +14,7 @@ const ProductForm = ({
   saveProduct,
 }) => {
   return (
-    <div className="hero p-12">
+    <div className="hero p-5">
       <form onSubmit={saveProduct}>
       <div className="card flex-shrink-0 shadow-2xl">
       <div className="card-body m-5">
@@ -21,14 +22,14 @@ const ProductForm = ({
           <label className="label" style={{color:"var(--color-black)"}}>
             <span>Product Image:</span>
           </label>
+          <input type="file" className="file-input file-input-bordered max-w-xs mt-2" style={{background:"var(--color-l-green)"}} onChange={(e) => handleImageChange(e)}/>
           {imagePreview != null ? (
-            <div className="card w-96 shadow-xl">
+            <div className=" w-96  p-6 shadow-xl">
               <figure><img src={imagePreview} alt="product" /></figure>
             </div>
           ) : (
           <p>No image set for this product.</p>
           )}
-          <input type="file" className="file-input file-input-bordered max-w-xs mt-2" style={{background:"var(--color-l-green)"}} onChange={(e) => handleImageChange(e)}/>
           <label className="label" style={{color:"var(--color-black)"}}>
             <span className="label-text-alt">Supported formats: jpg, jpeg, png</span>
           </label>
@@ -81,7 +82,7 @@ const ProductForm = ({
       
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
 
-        <div className="form-control m-2" style={{color:"var(--color-black)"}}>
+        <div className="" style={{color:"var(--color-black)"}}>
           <label className="label" >
             <span className="label-text" style={{color:"var(--color-black)"}}>Product Description:</span>
           </label>

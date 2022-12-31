@@ -24,7 +24,7 @@ const Header = () => {
       <h1 style={{marginLeft:"10px", color:"red", textTransform:"capitalize"}}>{name}</h1>
     </div>
     <div className="navbar-end" onClick={logout}>
-      <btn className="btn" style={{border:"1px solid", background:"var(--color-green)", color:"var(--color-l-green)"}}>Log Out</btn>
+      <div className="btn" style={{border:"1px solid", background:"var(--color-green)", color:"var(--color-l-green)"}}>Log Out</div>
     </div>
   </div>
   )

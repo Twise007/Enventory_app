@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import Loader from '../../components/loader/Loader';
 
 
-
 const initialState = {
   name: "",
   category: "",
@@ -50,7 +49,7 @@ const AddProduct = () => {
     formData.append("name", name);
     formData.append("sku", generateKSKU(category));
     formData.append("category", category);
-    formData.append("quantity", Number(quantity));
+    formData.append("quantity", quantity);
     formData.append("price", price);
     formData.append("description", description);
     formData.append("image", productImage);
@@ -65,7 +64,7 @@ const AddProduct = () => {
   return (
     <div>
         {isLoading && <Loader />}
-        <h3>Add New Product</h3>
+        <h3 className='pt-10' style={{textAlign:"center",}}>Add New Product</h3>
         <ProductForm
         product={product}
         productImage={productImage}

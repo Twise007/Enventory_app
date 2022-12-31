@@ -5,6 +5,7 @@ const name = JSON.parse(localStorage.getItem("name"))
 const initialState = {
     isLoggedIn : false,
     name: name ? name : "",
+//    name: "tunde",
     user: {
       name:"",
       email:"",

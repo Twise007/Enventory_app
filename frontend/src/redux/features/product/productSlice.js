@@ -9,8 +9,8 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   message: "",
-  totalStoreValue: 0,
-  outOfStock: 0,
+//  totalStoreValue: 0,
+//  outOfStock: 0,
   category: [],
 };
 
@@ -19,7 +19,7 @@ export const createProduct = createAsyncThunk(
   "products/create",
   async (formData, thunkAPI) => {
     try {
-      return await productService.createProduct(formData);
+      return await productService.createProduct (formData);
     } catch (error) {
       const message =
         (error.response &&
@@ -53,7 +53,7 @@ export const getProducts = createAsyncThunk(
 );
 
 // Delete a Product
-export const deleteProduct = createAsyncThunk(
+/*export const deleteProduct = createAsyncThunk(
   "products/delete",
   async (id, thunkAPI) => {
     try {
@@ -106,13 +106,13 @@ export const updateProduct = createAsyncThunk(
       return thunkAPI.rejectWithValue(message);
     }
   }
-);
+);*/
 
 const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    CALC_STORE_VALUE(state, action) {
+    /*CALC_STORE_VALUE(state, action) {
       const products = action.payload;
       const array = [];
       products.map((item) => {
@@ -151,7 +151,7 @@ const productSlice = createSlice({
       });
       const uniqueCategory = [...new Set(array)];
       state.category = uniqueCategory;
-    },
+    },*/
   },
   extraReducers: (builder) => {
     builder
@@ -188,7 +188,7 @@ const productSlice = createSlice({
         state.message = action.payload;
         toast.error(action.payload);
       })
-      .addCase(deleteProduct.pending, (state) => {
+      /*.addCase(deleteProduct.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(deleteProduct.fulfilled, (state, action) => {
@@ -232,17 +232,17 @@ const productSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
         toast.error(action.payload);
-      });
+      });*/
   },
 });
 
-export const { CALC_STORE_VALUE, CALC_OUTOFSTOCK, CALC_CATEGORY } =
+export const { CALC_STORE_VALUE, /*CALC_OUTOFSTOCK, CALC_CATEGORY */} =
   productSlice.actions;
 
 export const selectIsLoading = (state) => state.product.isLoading;
-export const selectProduct = (state) => state.product.product;
-export const selectTotalStoreValue = (state) => state.product.totalStoreValue;
-export const selectOutOfStock = (state) => state.product.outOfStock;
-export const selectCategory = (state) => state.product.category;
+//export const selectProduct = (state) => state.product.product;
+//export const selectTotalStoreValue = (state) => state.product.totalStoreValue;
+//export const selectOutOfStock = (state) => state.product.outOfStock;
+//export const selectCategory = (state) => state.product.category;
 
 export default productSlice.reducer;

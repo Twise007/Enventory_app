@@ -1,14 +1,12 @@
 import React from 'react'
-import Dashboard from '../../pages/dashboard/Dashboard'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div style={{}}>
-        <Dashboard />
+      <div style={{ minHeight: "85vh" }} >
         {children}
       </div>
       <Footer />
