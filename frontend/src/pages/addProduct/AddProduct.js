@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState }from 'react'
 import ProductForm from '../../components/product/productForm/ProductForm';
-import { useState } from 'react';
 import {  useDispatch, useSelector } from 'react-redux';
 import { createProduct, selectIsLoading } from '../../redux/features/product/productSlice';
 import { useNavigate } from "react-router-dom";

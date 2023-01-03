@@ -19,8 +19,6 @@ import AddProduct from "./pages/addProduct/AddProduct";
 
 axios.defaults.withCredentials =true;
 
-
-
 function App() {
   const dispatch = useDispatch();
 
