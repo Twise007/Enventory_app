@@ -1,23 +1,16 @@
 import React, {useState} from 'react';
 import {BsArrowLeftCircle} from "react-icons/bs";
-import {MdDashboard, MdOutlineAddchart, MdAccountCircle, MdMessage} from "react-icons/md";
 import { Link } from 'react-router-dom';
-import Layout from '../layout/Layout';
+import menu from "../../data/sidebarData";
 
 
 const Sidebar = ({children}) => {
-
   const [open, setOpen] = useState(true)
 
-  const menus =[
-    { name:'Dashboard', link:'/dashboard', icon: MdDashboard},
-    { name:'Add Product', link:'/add-product', icon: MdOutlineAddchart},
-    { name:'Account', link:'/account', icon: MdAccountCircle},
-    { name:'Report a Bug', link:'/bug', icon: MdMessage},
-  ]
+
 
   return (
-  <div className='flex'>
+  <div className='flex' style={{ minHeight: "90vh", background:"white"}}>
     <div className={` min-h-screen ${open ? "w-72" : "w-16"} duration-500 `} style={{background:"var(--color-l-green)"}}>
       <div className="py-5 px-5 flex justify-end" style={{background:"var(--color-green)"}}>
         <BsArrowLeftCircle size={26} className={` cursor-pointer ${!open && "rotate-180"}
@@ -25,7 +18,7 @@ const Sidebar = ({children}) => {
       </div>
       <div className="mt-3 flex flex-col gap-4 px-4 relative">
       {
-        menus?.map((menu,i) => (
+        menu?.map((menu,i) => (
           <Link to={menu?.link} key={i} className= {` group flex items-center text-sm gap-3.5 
           font-meduim p-2 hover:bg-[#f5f5f5] duration-300`} style={{borderBottom:"1px solid var(--color-green)", borderRadius:"0", color:"var(--color-black)"}}>
           <div style={{color:"var(--color-green)", }}>
@@ -48,9 +41,9 @@ const Sidebar = ({children}) => {
       </div>
     </div>
     
-    <div className=" flex-1 h-screen
+    <div className=" flex-1
     ">
-      <Layout/>
+      {children}
     </div>
   </div>
   )

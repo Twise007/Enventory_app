@@ -10,7 +10,7 @@
   --color-green: #00684A;
   --color-l-green:#E3FCF7;
   --color-white: #fff;
-
+  --color-off-white:#f2f2f2;
 }
 
 * {
@@ -18,5 +18,6 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  
 }
 

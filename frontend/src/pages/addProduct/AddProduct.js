@@ -63,7 +63,9 @@ const AddProduct = () => {
   return (
     <div>
         {isLoading && <Loader />}
-        <h3 className='pt-10' style={{textAlign:"center",}}>Add New Product</h3>
+        <div className="navbar bg-primary-content">
+        <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Add product:</div> 
+      </div>
         <ProductForm
         product={product}
         productImage={productImage}

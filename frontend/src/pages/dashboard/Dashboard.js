@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductList from '../../components/product/productList/ProductList'
 import useRedirectLoggedOutUser from '../../customHook/useRedirectLoggedOutUser'
 import { selectisLoggedIn } from '../../redux/features/auth/authSlice'
-import { getProducts } from '../../redux/features/product/productService'
+import { getProducts } from '../../redux/features/product/productSlice'
 
 
 const Dashboard = () => {
@@ -27,8 +27,10 @@ const Dashboard = () => {
 
 
   return (
-    <div className="bg-primary-content" >
-      <ProductList  product={products} isLoading={isLoading}/>
+    <div style={{background:"var(--color-off-white)", minHeight:"100vh"}}>
+      <h1>Dash board</h1>
+
+      <ProductList products={products} isLoading={isLoading} />
     </div>
   )
 }

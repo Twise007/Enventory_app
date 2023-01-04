@@ -18,7 +18,7 @@ const Header = () => {
 
 
   return (
-  <div className="navbar " style={{top: '0px', position: 'sticky', borderBottom: '.5px solid', background:'var(--color-l-green)',zIndex:'10'}}>
+  <div className="navbar " style={{top: '0px', position: 'sticky', borderBottom: '.5px solid', background:'var(--color-l-green)',zIndex:'999'}}>
     <div className="navbar-start">
       <h1 style={{marginLeft:"10px", color:"var(--color-black)"}}>Welcome,</h1>
       <h1 style={{marginLeft:"10px", color:"red", textTransform:"capitalize"}}>{name}</h1>

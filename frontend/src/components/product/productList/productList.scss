@@ -1,0 +1,65 @@
+.noProduct{
+    color: var(--color-black);
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+.tdata{
+        text-transform:capitalize;
+        tr{    
+            th,td{
+                background: var(--color-white);
+                .icons {
+                    cursor: pointer;
+                    :hover{
+                        font-size: 20px;
+                        }
+                    }
+                }
+        }
+    }
+
+.head{
+    tr{
+        th{
+    background: var(--color-green) !important;
+    color: var(--color-white);
+        }
+    }
+}
+
+
+
+
+
+.pagination{
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.pagination a{
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--color-green);
+    color: var(--color-black);
+    cursor: pointer;
+}
+
+.pagination a:hover{
+    background: var(--color-green);
+    color: var(--color-white) !important;
+}
+
+.activePage{
+    background: var(--color-green);
+    color: var(--color-white) !important;
+}
