@@ -22,14 +22,14 @@ const ProductForm = ({
           <label className="label" style={{color:"var(--color-black)"}}>
             <span>Product Image:</span>
           </label>
-          <input type="file" className="file-input file-input-bordered max-w-xs mt-2" style={{background:"var(--color-l-green)"}} onChange={(e) => handleImageChange(e)}/>
-          {imagePreview != null ? (
-            <div className=" w-96  p-6 shadow-xl">
-              <figure><img src={imagePreview} alt="product" /></figure>
-            </div>
-          ) : (
-          <p>No image set for this product.</p>
-          )}
+            <input type="file" className="file-input file-input-bordered mt-2" style={{background:"var(--color-l-green)"}} onChange={(e) => handleImageChange(e)}/>
+            {imagePreview != null ? (
+              <div className=" w-96  p-6 shadow-xl">
+                <figure><img src={imagePreview} alt="product" /></figure>
+              </div>
+            ) : (
+            <p>No image set for this product.</p>
+            )}
           <label className="label" style={{color:"var(--color-black)"}}>
             <span className="label-text-alt">Supported formats: jpg, jpeg, png</span>
           </label>
@@ -42,8 +42,8 @@ const ProductForm = ({
             <span className="label-text" style={{color:"var(--color-black)"}}>Product Name:</span>
           </label>
           <label className="input-group">
-            <span style={{background:"var(--color-green)", color:"var(--color-white)"}}>Product name</span>
-            <input type="text" placeholder="Product name" name='name' value={product?.name} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
+            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product name</span>
+            <input type="text" placeholder="Product name" name='name' value={product?.name} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", width:"100%"}}/>
           </label>
         </div>
       
@@ -53,8 +53,8 @@ const ProductForm = ({
             <span className="label-text" style={{color:"var(--color-black)"}}>Category:</span>
           </label>
           <label className="input-group">
-            <span style={{background:"var(--color-green)", color:"var(--color-white)"}}>Category</span>
-            <input type="text" placeholder="Category" name='category' value={product?.category} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
+            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Category</span>
+            <input type="text" placeholder="Category" name='category' value={product?.category} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", width:"100%"}}/>
           </label>
         </div>
       
@@ -64,8 +64,8 @@ const ProductForm = ({
             <span className="label-text" style={{color:"var(--color-black)"}}>Product Price:</span>
           </label>
           <label className="input-group">
-            <span style={{background:"var(--color-green)", color:"var(--color-white)"}}>Product Price</span>
-            <input type="text" placeholder="$ $ $" name='price' value={product?.price} onChange = {handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
+            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product Price</span>
+            <input type="text" placeholder="$ $ $" name='price' value={product?.price} onChange = {handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", width:"100%"}}/>
           </label>
         </div>
       
@@ -75,18 +75,18 @@ const ProductForm = ({
             <span className="label-text" style={{color:"var(--color-black)"}}>Product Quantity:</span>
           </label>
           <label className="input-group">
-            <span style={{background:"var(--color-green)", color:"var(--color-white)"}}>Product Quantity</span>
-            <input type="text" placeholder="Product quantity" name='quantity' value={product?.quantity} onChange = {handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)",}}/>
+            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product Quantity</span>
+            <input type="text" placeholder="Product quantity" name='quantity' value={product?.quantity} onChange = {handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", width:"100%"}}/>
           </label>
         </div>
       
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
 
-        <div className="" style={{color:"var(--color-black)"}}>
+        <div className="p-2" style={{color:"var(--color-black)", minWidth:"30pc", maxWidth:"50pc", }}>
           <label className="label" >
             <span className="label-text" style={{color:"var(--color-black)"}}>Product Description:</span>
           </label>
-          <ReactQuill theme="snow" value={description} onChange={setDescription} modules={ProductForm.modules} formats={ProductForm.formats}/>
+          <ReactQuill theme="snow" value={description} onChange={setDescription} modules={ProductForm.modules} formats={ProductForm.formats} style={{background:"var(--color-l-green)"}}/>
         </div>
 
         <button type='submit' className="btn" style={{background:"var(--color-green)", color:"var(--color-l-green)"}}>Save Product</button>

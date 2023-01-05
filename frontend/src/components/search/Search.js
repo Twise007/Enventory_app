@@ -6,7 +6,7 @@ const Search = ({value, onChange}) => {
     <div className="form-control " style={{color:"var(--color-black)", border:".5px solid var(--color-green)", borderRadius:"8px"}}>
         <div className="input-group">
             <input type="text" placeholder="Search…" value={value} onChange={onChange} className="input" style={{background:"var(--color-l-green)"}}/>
-            <button className="btn btn-square" style={{background:"var(--color-green)", color:"var(--color-white)"}}>
+            <button className="btn btn-square hover:bg-[#f5f5f5]" style={{background:"var(--color-green)", color:"var(--color-white)"}}>
                 <BiSearch />
             </button>
         </div>

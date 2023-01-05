@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ProductList from '../../components/product/productList/ProductList'
+import ProductSummary from '../../components/product/productSummary/ProductSummary'
 import useRedirectLoggedOutUser from '../../customHook/useRedirectLoggedOutUser'
 import { selectisLoggedIn } from '../../redux/features/auth/authSlice'
 import { getProducts } from '../../redux/features/product/productSlice'
@@ -28,8 +29,7 @@ const Dashboard = () => {
 
   return (
     <div style={{background:"var(--color-off-white)", minHeight:"100vh"}}>
-      <h1>Dash board</h1>
-
+      <ProductSummary products={products} />
       <ProductList products={products} isLoading={isLoading} />
     </div>
   )

@@ -7,10 +7,8 @@ import menu from "../../data/sidebarData";
 const Sidebar = ({children}) => {
   const [open, setOpen] = useState(true)
 
-
-
   return (
-  <div className='flex' style={{ minHeight: "90vh", background:"white"}}>
+  <div className='flex' style={{ minHeight: "90vh", background:"white", position:"sticky"}}>
     <div className={` min-h-screen ${open ? "w-72" : "w-16"} duration-500 `} style={{background:"var(--color-l-green)"}}>
       <div className="py-5 px-5 flex justify-end" style={{background:"var(--color-green)"}}>
         <BsArrowLeftCircle size={26} className={` cursor-pointer ${!open && "rotate-180"}
@@ -32,7 +30,7 @@ const Sidebar = ({children}) => {
           </h2>
           <h2 className={`${open && "hidden"} absolute left-48 bg-[var(--color-l-green)] font-semibold 
             whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden
-            group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}>
+            group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit `} style={{zIndex:"10"}}>
             {menu?.name}
           </h2>
         </Link>
