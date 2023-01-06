@@ -7,6 +7,11 @@ import { AiOutlineEye } from "react-icons/ai"
 import Search from '../../search/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { FILTER_PRODUCTS, selectFilteredProducts } from '../../../redux/features/product/filterSlice';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { deleteProduct, getProducts, } from "../../../redux/features/product/productSlice";
+import { Link } from 'react-router-dom';
+
 
 
 const ProductList = ({ products, isLoading }) => {
@@ -20,6 +25,28 @@ const ProductList = ({ products, isLoading }) => {
       return shortenedText;
     }
     return text;
+  };
+  
+  const delProduct = async (id) => {
+    await dispatch(deleteProduct(id));
+    await dispatch(getProducts());
+  };
+
+  const confirmDelete = (id) => {
+    confirmAlert({
+      title: "Delete Product",
+      message: "Are you sure you want to delete this product.",
+      buttons: [
+        {
+          label: "Delete",
+          onClick: () => delProduct(id),
+        },
+        {
+          label: "Cancel",
+          // onClick: () => alert('Click No')
+        },
+      ],
+    });
   };
 
   //begin pagination
@@ -49,14 +76,14 @@ const ProductList = ({ products, isLoading }) => {
 
   return (
     <div className='productTable'>
-      <div className="navbar bg-primary-content">
+      <div className="navbar bg-primary-content mt-5">
         <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Items</div>
         <div className="flex-none"><Search value={search} onChange={(e) => setSearch(e.target.value)}/></div>  
       </div>
 
       {isLoading && <SpinnerImg />}
 
-      <div className="overflow-x-auto p-8 pt-2">
+      <div className="overflow-x-auto p-8 pt-3">
       {!isLoading && products.length === 0 ? (
             <p className='noProduct'>-- No product found, please add a product...</p>
           ) : (
@@ -72,13 +99,13 @@ const ProductList = ({ products, isLoading }) => {
               <th>Action</th>
             </tr>
           </thead> 
-          <tbody className='tdata'>
+          <tbody className='tdata '>
             {currentItems.map((product, index) =>{
                 const {
                   _id, name, category, price, quantity
                 } = product
                 return (
-                  <tr key={_id} >
+                  <tr key={_id} className="btn-ghost hover:bg-[#f2f2f2]">
                     <th>{index + 1}</th> 
                     <td>{shortenText (name, 16)}</td> 
                     <td>{category}</td> 
@@ -87,14 +114,20 @@ const ProductList = ({ products, isLoading }) => {
                     <td>{"₦"}{price * quantity}</td> 
                     <td>
                         <div className="avatar icons">
+                          <Link to={`/product-detail/${_id}`}>
+                            <div className="mask w-8 h-4">
+                              <AiOutlineEye color={"purple"}
+                              />
+                            </div>
+                          </Link>
+                          <Link to={`/edit-product/${_id}`}>
+                            <div className="mask w-8 h-4">
+                              <FaEdit color={"green"}/>
+                            </div>
+                          </Link>
                           <div className="mask w-8 h-4">
-                            <AiOutlineEye color={"purple"} text={'hello'}/>
-                          </div>
-                          <div className="mask w-8 h-4">
-                            <FaEdit color={"green"}/>
-                          </div>
-                          <div className="mask w-8 h-4">
-                            <FaTrashAlt color={"red"}/>
+                            <FaTrashAlt color={"red"}
+                            onClick={() => confirmDelete(_id)}/>
                           </div>
                         </div>
                     </td>

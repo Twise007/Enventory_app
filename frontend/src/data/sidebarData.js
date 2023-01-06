@@ -1,41 +1,24 @@
-
-
 import {MdDashboard, MdOutlineAddchart, MdAccountCircle, MdMessage} from "react-icons/md";
 
 const menu =[
   { name:'Dashboard', link:'/dashboard', icon: MdDashboard},
   { name:'Add Product', link:'/add-product', icon: MdOutlineAddchart},
-  { name:'Account', link:'/account', icon: MdAccountCircle},
-  { name:'Report a Bug', link:'/bug', icon: MdMessage},
-]
-
-{/*
-import { FaTh, FaRegChartBar, FaCommentAlt } from "react-icons/fa";
-import { BiImageAdd } from "react-icons/bi";
-
-
-const menu = [
-
   {
-    title: "Account",
-    icon: <FaRegChartBar />,
+    name: "Account",
+    icon: MdAccountCircle,
     childrens: 
     [
       {
-        title: "Profile",
-        path: "/profile",
+        name: "Profile",
+        link: "/profile",
       },
       {
-        title: "Edit Profile",
-        path: "/edit-profile",
+        name: "Edit Profile",
+        link: "/edit-profile",
       },
     ],
   },
-  {
-    title: "Report Bug",
-    icon: <FaCommentAlt />,
-    path: "/contact-us",
-  },
-];*/}
+  { name:'Report a Bug', link:'/bug', icon: MdMessage},
+]
 
 export default menu;
