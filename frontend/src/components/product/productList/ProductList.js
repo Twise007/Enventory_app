@@ -105,7 +105,7 @@ const ProductList = ({ products, isLoading }) => {
                   _id, name, category, price, quantity
                 } = product
                 return (
-                  <tr key={_id} className="btn-ghost hover:bg-[#f2f2f2]">
+                  <tr key={_id} className="btn-ghost">
                     <th>{index + 1}</th> 
                     <td>{shortenText (name, 16)}</td> 
                     <td>{category}</td> 

@@ -97,7 +97,7 @@ export const getLoginStatus = async () => {
 };
 
 //get user profile
-export const getUserProfile = async () => {
+export const getUser = async () => {
     try {
         const response = await axios.get( `${BACKEND_URL}/api/users/getuser`);
         return response.data;

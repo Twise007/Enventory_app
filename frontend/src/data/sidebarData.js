@@ -6,7 +6,7 @@ const menu =[
   {
     name: "Account",
     icon: MdAccountCircle,
-    childrens: 
+    subMenu: 
     [
       {
         name: "Profile",

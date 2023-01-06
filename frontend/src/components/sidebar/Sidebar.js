@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import {BsArrowLeftCircle} from "react-icons/bs";
+import {BsArrowLeftCircle, BsChevronDown } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import menu from "../../data/sidebarData";
 
 
 const Sidebar = ({children}) => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
+  const [subMenuOpen, setSubMenuOpen] = useState(false)
 
   return (
-  <div className='flex' style={{ minHeight: "90vh", background:"white", position:"sticky"}}>
-    <div className={` min-h-screen ${open ? "w-72" : "w-16"} duration-500 `} style={{background:"var(--color-l-green)"}}>
+  <div className='h-screen flex' style={{ background:"white",}}>
+    <div className={`h-screen ${open ? "w-72" : "w-16"} duration-500 `} style={{background:"var(--color-l-green)"}}>
       <div className="py-5 px-5 flex justify-end" style={{background:"var(--color-green)"}}>
         <BsArrowLeftCircle size={26} className={` cursor-pointer ${!open && "rotate-180"}
         `}  onClick={()=> setOpen(!open)} style={{color:"var(--color-l-green)" ,background:"var(--color-green)", borderRadius:"50%"}}/>
@@ -27,11 +28,45 @@ const Sidebar = ({children}) => {
           }}
           className={`duration-500 ${!open && 'opacity-0 translate-x-28 overflow-hidden'}`}>
             {menu?.name}
+            <ul className="menu menu-horizontal px-1">
+              <li tabIndex={0}>
+                {menu.subMenu && (
+                <p><BsChevronDown  
+                  onClick={() => setSubMenuOpen(!subMenuOpen)} /></p>
+                  )}
+                {menu.subMenu && subMenuOpen && open && (
+                  <ul className="p-2 m-2 shadow4xl w-30 glass" style={{background:""}} >
+                    {menu.subMenu.map((subMenu, index) => (
+                      <Link  to={subMenu.link} key={index}>
+                        <li className="p-2 hover:glass" style={{borderRadius:"10px"}}>{subMenu.name}</li>
+                      </Link>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            </ul>
           </h2>
           <h2 className={`${open && "hidden"} absolute left-48 bg-[var(--color-l-green)] font-semibold 
             whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden
-            group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit `} style={{zIndex:"10"}}>
+            group-hover:px-2 group-hover:py-1 group-hover:left-12 group-hover:duration-300 group-hover:w-fit `} style={{zIndex:"10"}}>
             {menu?.name}
+            <ul className="menu menu-horizontal px-1">
+              <li tabIndex={0}>
+                {menu.subMenu && (
+                <><BsChevronDown  
+                  onClick={() => setSubMenuOpen(!subMenuOpen)} /></>
+                  )}
+                {menu.subMenu && subMenuOpen && open && (
+                  <ul className="p-2 m-2 shadow4xl w-30 glass" style={{background:""}} >
+                    {menu.subMenu.map((subMenu, index) => (
+                      <Link  to={subMenu.link} key={index}>
+                        <li className="p-2 hover:glass" style={{borderRadius:"10px"}}>{subMenu.name}</li>
+                      </Link>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            </ul>
           </h2>
         </Link>
         ))
@@ -39,7 +74,7 @@ const Sidebar = ({children}) => {
       </div>
     </div>
     
-    <div className=" flex-1
+    <div className=" flex-1 h-screen
     ">
       {children}
     </div>
