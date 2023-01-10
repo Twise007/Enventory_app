@@ -13,7 +13,7 @@ const home = () => {
         <div className="flex-1" >
             <b className="btn normal-case text-xl" style={{background:'var(--color-l-green)', cursor:"none"}}>
                 <RiProductHuntLine  size={35} style={{ borderRadius:"50%", color:"var(--color-black)"}}/>
-                <p style={{color:"var(--color-black)"}}>Inventory {"&"} App</p>
+                <p style={{color:"var(--color-black)"}}>E-ventory {"&"} App</p>
             </b>
         </div>
         <div className="flex-none">
