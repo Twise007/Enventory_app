@@ -20,7 +20,7 @@ const ProductForm = ({
       <div className="card-body m-5">
         <div className="form-control m-2 w-96">
           <label className="label" style={{color:"var(--color-black)"}}>
-            <span>Product Image:</span>
+          <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Image:</span>
           </label>
             <input type="file" className="file-input file-input-bordered mt-2" style={{background:"var(--color-l-green)"}} onChange={(e) => handleImageChange(e)}/>
             {imagePreview != null ? (
@@ -30,19 +30,19 @@ const ProductForm = ({
             ) : (
             <p>No image set for this product.</p>
             )}
-          <label className="label" style={{color:"var(--color-black)"}}>
+       <label className="label" style={{color:"var(--color-black)"}}>
             <span className="label-text-alt">Supported formats: jpg, jpeg, png</span>
-          </label>
+          </label>   
         </div>
 
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
         
         <div className="form-control m-2" style={{color:"var(--color-black)"}}>
           <label className="label" >
-            <span className="label-text" style={{color:"var(--color-black)"}}>Product Name:</span>
+          <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Name:</span>
           </label>
           <label className="input-group">
-            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product name</span>
+            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product Name</span>
             <input type="text" placeholder="Product name" name='name' value={product?.name} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", width:"100%"}}/>
           </label>
         </div>
@@ -50,7 +50,7 @@ const ProductForm = ({
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
         <div className="form-control m-2" style={{color:"var(--color-black)"}}>
           <label className="label" >
-            <span className="label-text" style={{color:"var(--color-black)"}}>Category:</span>
+          <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Category:</span>
           </label>
           <label className="input-group">
             <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Category</span>
@@ -61,7 +61,7 @@ const ProductForm = ({
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
         <div className="form-control m-2" style={{color:"var(--color-black)"}}>
           <label className="label" >
-            <span className="label-text" style={{color:"var(--color-black)"}}>Product Price:</span>
+          <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Price:</span>
           </label>
           <label className="input-group">
             <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product Price</span>
@@ -72,7 +72,7 @@ const ProductForm = ({
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
         <div className="form-control m-2" style={{color:"var(--color-black)"}}>
           <label className="label" >
-            <span className="label-text" style={{color:"var(--color-black)"}}>Product Quantity:</span>
+          <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Quantity:</span>
           </label>
           <label className="input-group">
             <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"15pc"}}>Product Quantity</span>
@@ -82,9 +82,9 @@ const ProductForm = ({
       
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
 
-        <div className="p-2" style={{color:"var(--color-black)", minWidth:"30pc", maxWidth:"50pc", }}>
+        <div className="p-2" style={{color:"var(--color-black)", minWidth:"30pc", maxWidth:"50pc"}}>
           <label className="label" >
-            <span className="label-text" style={{color:"var(--color-black)"}}>Product Description:</span>
+          <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Description:</span>
           </label>
           <ReactQuill theme="snow" value={description} onChange={setDescription} modules={ProductForm.modules} formats={ProductForm.formats} style={{background:"var(--color-l-green)"}}/>
         </div>

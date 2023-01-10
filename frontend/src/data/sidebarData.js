@@ -6,7 +6,7 @@ const menu =[
   {
     name: "Account",
     icon: MdAccountCircle,
-    subMenu: 
+    subMenu:
     [
       {
         name: "Profile",
@@ -18,7 +18,7 @@ const menu =[
       },
     ],
   },
-  { name:'Report a Bug', link:'/bug', icon: MdMessage},
+  { name:'Report a Bug', link:'/contact-us', icon: MdMessage},
 ]
 
 export default menu;

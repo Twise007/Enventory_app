@@ -14,10 +14,10 @@ import {
 } from "../../../redux/features/product/productSlice";
 
 // Icons
-const earningIcon = <AiFillDollarCircle size={40} color="#fff" />;
-const productIcon = <BsCart4 size={40} color="#fff" />;
-const categoryIcon = <BiCategory size={40} color="#fff" />;
-const outOfStockIcon = <BsCartX size={40} color="#fff" />;
+const earningIcon = <AiFillDollarCircle color="var(--color-green)" />;
+const productIcon = <BsCart4 color="blue" />;
+const categoryIcon = <BiCategory color="purple" />;
+const outOfStockIcon = <BsCartX color="red" />;
 
 // Format Amount
 export const formatNumbers = (x) => {
@@ -43,23 +43,26 @@ const ProductSummary = ({ products }) => {
         <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Stats:</div> 
       </div>
       <div>
-        <InfoBox icon={productIcon} 
+        <InfoBox 
+        icon={productIcon} 
         title={"Total Products"} 
-        count={products.length}
-        
+        count={products.length}  
         />
 
-        <InfoBox icon={earningIcon} 
+        <InfoBox 
+        icon={earningIcon} 
         title={"Total Store Value"} 
         count={`₦${formatNumbers(totalStoreValue.toFixed(2))}  `}
         />
 
-        <InfoBox icon={outOfStockIcon} 
+        <InfoBox 
+        icon={outOfStockIcon} 
         title={"Out of Stock"} 
         count={outOfStock} 
         />
 
-        <InfoBox icon={categoryIcon} 
+        <InfoBox 
+        icon={categoryIcon} 
         title={"All Category"} 
         count={category.length} 
         />

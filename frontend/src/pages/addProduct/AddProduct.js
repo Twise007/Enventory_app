@@ -64,7 +64,7 @@ const AddProduct = () => {
     <div>
         {isLoading && <Loader />}
         <div className="navbar bg-primary-content">
-          <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Add Product:</div> 
+          <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px", borderBottom:"2px solid var(--color-green)"}}>Add Product:</div> 
         </div>
         <ProductForm
         product={product}
