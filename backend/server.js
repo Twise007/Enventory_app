@@ -18,7 +18,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:3000", ""],
+    credentials: true,
+}));
 
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
