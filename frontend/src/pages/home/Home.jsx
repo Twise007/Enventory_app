@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiProductHuntLine } from "react-icons/ri"
+import { TfiBookmarkAlt } from "react-icons/tfi"
 import { Link }from "react-router-dom";
 import Homepic from '../../assets/home.jpg';
 import { ShowOnLogin, ShowOnLogout } from '../../components/protect/HiddenLinks';
@@ -12,8 +12,8 @@ const home = () => {
         <div className="navbar" style={{top: '0px', position: 'sticky',background:"var(--color-green)",zIndex:'10', color:"var(--color-black)"}} >
         <div className="flex-1" >
             <b className="btn normal-case text-xl" style={{background:'var(--color-l-green)', cursor:"none"}}>
-                <RiProductHuntLine  size={35} style={{ borderRadius:"50%", color:"var(--color-black)"}}/>
-                <p style={{color:"var(--color-black)"}}>E-ventory {"&"} App</p>
+                <TfiBookmarkAlt  size={35} style={{color:"var(--color-black)"}}/>
+                <p className='m-2' style={{color:"var(--color-black)"}}>E-ventory App</p>
             </b>
         </div>
         <div className="flex-none">
@@ -40,7 +40,7 @@ const home = () => {
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>23 -</span> Active users</p>
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>50 -</span> Partners</p>
                 <button className="btn" style={{background:"var(--color-l-green)", color:'var(--color-black)'}}>
-                    <Link to='/dashbord'>Free Trail 1 Month</Link>
+                    <Link to='/register'>Free Trail 1 Month</Link>
                 </button>
                 </div>
             </div>

@@ -68,7 +68,7 @@ const Register = () => {
     <div className="hero-content flex-col " style={{background:"var(--color-l-green)"}}>
       <div className="text-center" style={{background:"var(--color-l-green)", color:"var(--color-black)"}}>
         <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)"}}>Register now!</h1>
-        <p className="py-6" style={{background:"var(--color-l-green)"}}>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p className="py-6" style={{background:"var(--color-l-green)"}}>Register with us to keep track of your product</p>
       </div>
       <div className="card shadow-2xl" style={{width:'25pc'}} >
         <div className="card-body ">
@@ -77,25 +77,25 @@ const Register = () => {
           <label className="label">
             <span className="label-text" style={{fontSize:"16px", color:"var(--color-black)"}}>Name</span>
           </label>
-          <input type="text" placeholder='Name' required name='name'  value={name} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px"}}/>
+          <input type="text" placeholder='Name' required name='name'  value={name} onChange={handleInputChange} className="input" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px", border:"2px solid var(--color-green)"}}/>
         </div>
         <div className="form-control " >
           <label className="label">
             <span className="label-text" style={{fontSize:"16px", color:"var(--color-black)"}}>Email</span>
           </label>
-          <input type="email" placeholder='Email' required name='email' value={email} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px"}}/>
+          <input type="email" placeholder='Email' required name='email' value={email} onChange={handleInputChange} className="input" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px", border:"2px solid var(--color-green)"}}/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text" style={{fontSize:"16px", color:"var(--color-black)"}}>Password</span>
           </label>
-          <input type="password" placeholder='Password' required name='password' value={password} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px"}}/>
+          <input type="password" placeholder='Password' required name='password' value={password} onChange={handleInputChange} className="input" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px", border:"2px solid var(--color-green)"}}/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text" style={{fontSize:"16px", color:"var(--color-black)"}}>Confirm password</span>
           </label>
-          <input type="password" placeholder='Confirm password' required name='password2' value={password2} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px"}}/>
+          <input type="password" placeholder='Confirm password' required name='password2' value={password2} onChange={handleInputChange} className="input" style={{background:"var(--color-l-green)", color:'var(--color-black)' ,fontSize:"12px", border:"2px solid var(--color-green)"}}/>
         </div>
         <div className="form-control mt-2">
           <button className="btn" type='submit' style={{background:"var(--color-green)", color:"var(--color-white)", fontSize:"12px"}}>Register</button>
