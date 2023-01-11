@@ -36,7 +36,7 @@ const home = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div  className="hero-content text-center text-neutral-content" style={{}}>
                 <div  className="">
-                <h1>Keep track of your product in an effective manner</h1>
+                <h1>Keep track of your products in an effective manner</h1>
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>14 -</span> Brand owners</p>
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>23 -</span> Active users</p>
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>50 -</span> Partners</p>
