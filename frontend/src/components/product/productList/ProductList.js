@@ -149,7 +149,7 @@ const ProductList = ({ products, isLoading }) => {
         </table>
         )}
       </div>
-
+      <div className='hero mt-16'>
         <ReactPaginate
             previousLabel="Prev"
             nextLabel="Next"
@@ -160,6 +160,7 @@ const ProductList = ({ products, isLoading }) => {
             disabledClassName={'paginationDisable'}
             activeLinkClassName={"activePage"}
           />
+      </div>
     </div>
   )
 }
