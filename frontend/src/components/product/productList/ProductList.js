@@ -150,7 +150,7 @@ const ProductList = ({ products, isLoading }) => {
         )}
       </div>
       <div className='hero mt-16'>
-        <ReactPaginate
+        {/* <ReactPaginate
             previousLabel="Prev"
             nextLabel="Next"
             pageCount={pageCount}
@@ -159,7 +159,7 @@ const ProductList = ({ products, isLoading }) => {
             containerClassName={"pagination"}
             disabledClassName={'paginationDisable'}
             activeLinkClassName={"activePage"}
-          />
+          /> */}
       </div>
     </div>
   )
