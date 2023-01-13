@@ -28,7 +28,7 @@ const Dashboard = () => {
 
 
   return (
-    <div style={{background:"var(--color-off-white)", minHeight:"100vh"}}>
+    <div style={{background:"var(--color-off-white)"}} className='pb-10'>
       <ProductSummary products={products} />
       <ProductList products={products} isLoading={isLoading} />
     </div>

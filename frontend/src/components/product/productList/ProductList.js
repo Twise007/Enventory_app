@@ -149,7 +149,7 @@ const ProductList = ({ products, isLoading }) => {
         </table>
         )}
       </div>
-      <div className='hero relative'>
+      <div className='hero relative mt-2'>
         <ReactPaginate
             previousLabel="Prev"
             nextLabel="Next"
