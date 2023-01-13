@@ -38,7 +38,7 @@ const changePass = async (e) => {
 
 
   return (
-    <div className='hero p-5 shadow-2xl' style={{width:"35pc", borderRadius:'10px', border:"2px solid var(--color-green)"}}>
+    <div className='p-5 shadow-2xl' style={{width:"35pc", borderRadius:'10px', border:"2px solid var(--color-green)"}}>
         <div className="navbar bg-primary-content">
             <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px", borderBottom:"2px solid var(--color-green)"}}>Change Password:</div> 
         </div>

@@ -54,7 +54,7 @@ const Sidebar = ({children}) => {
                   <ul className="m-4 shadow4xl glass rounded-md">
                     {menu.subMenu.map((subMenu, index) => (
                       <Link  to={subMenu.link} key={index}>
-                        <li className='text-sm flex items-center cursor-pointer hover:bg-[fffff] m-1 p-2 ' style={{color:"var(--color-black)"}}>
+                        <li className='text-sm flex items-center cursor-pointer hover:bg-[#f5f5f5] hover:rounded-md m-1 p-2 ' style={{color:"var(--color-black)"}}>
                           {subMenu.name}
                         </li>
                       </Link>

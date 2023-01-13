@@ -149,8 +149,9 @@ const EditProfile = () => {
         </>
 
         <div className='mt-10 mb-10' style={{border:"2px solid var(--color-green)", background:"var(--color-green)"}}></div>
-
-        <ChangePassword />
+        <div className="hero">
+            <ChangePassword />
+        </div>
     </div>
     </>
   )
