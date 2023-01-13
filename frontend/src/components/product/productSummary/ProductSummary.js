@@ -50,12 +50,6 @@ const ProductSummary = ({ products }) => {
         />
 
         <InfoBox 
-        icon={earningIcon} 
-        title={"Total Store Value"} 
-        count={`₦${formatNumbers(totalStoreValue.toFixed(2))}  `}
-        />
-
-        <InfoBox 
         icon={outOfStockIcon} 
         title={"Out of Stock"} 
         count={outOfStock} 
@@ -65,6 +59,12 @@ const ProductSummary = ({ products }) => {
         icon={categoryIcon} 
         title={"All Category"} 
         count={category.length} 
+        />
+
+        <InfoBox 
+        icon={earningIcon} 
+        title={"Total Store Value"} 
+        count={`₦${formatNumbers(totalStoreValue.toFixed(2))}  `}
         />
 
       </div>
