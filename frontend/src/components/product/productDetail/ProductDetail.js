@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser";
 import { selectisLoggedIn } from "../../../redux/features/auth/authSlice";
 import { getProduct } from "../../../redux/features/product/productSlice";
 import { SpinnerImg } from "../../loader/Loader";
 import  DOMPurify  from 'dompurify';
+import { TiArrowBackOutline } from "react-icons/ti";
 
 
 const ProductDetail = () => {
@@ -40,11 +41,20 @@ const ProductDetail = () => {
   return (
     <div>
         <div className="navbar bg-primary-content">
-            <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Product Details:</div> 
+            <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px", borderBottom:"2px solid var(--color-green)"}}>Product Details: 
+            <Link to='/dashboard'>
+          <div className="alert p-0 ml-2 mb-1 " style={{borderRadius:"none", fontSize:"20px", background:"var(--color-white)"}}>
+            <div className="hover:bg-[var(--color-l-green)] rounded-md p-2">
+              <TiArrowBackOutline  style={{color:"var(--color-green)"}}/>
+              <span style={{color:"var(--color-black)"}}>Go back</span> 
+            </div>
+          </div>
+          </Link>
+            </div> 
         </div>
       {isLoading && <SpinnerImg />}
       {product && (
-        <div className="m-5 hero">
+        <div className="p-5 hero">
             <div className="card w-96 glass shadow-xl">
                 <figure className="px-10 pt-10">
                     {product?.image ? (
