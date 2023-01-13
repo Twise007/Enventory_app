@@ -30,11 +30,11 @@ const Forgot = () => {
   <div className="hero min-h-screen" style={{background:"var(--color-l-green)"}}>
     <div className="hero-content flex-col " style={{background:"var(--color-l-green)"}}>
       <div className="text-center" style={{background:"var(--color-l-green)", color:"var(--color-black)"}}>
-        <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)"}}>Forgot Password!</h1>
-        <p className="py-6" style={{background:"var(--color-l-green)"}}>Forgot your password?,<br/>Kindly input your Email below to get a reset link to your password</p>
+        <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)", color:"var(--color-green)"}}>Forgot Password!</h1>
+        <p className="py-6" style={{background:"var(--color-l-green)"}}>Kindly input your Email below to get a reset link to your password</p>
       </div>
       <form onSubmit={forgot}>
-      <div className="card shadow-2xl" style={{width:'25pc'}} >
+      <div className="card shadow-2xl w-96">
         <div className="card-body ">
           <div className="form-control " >
             <label className="label">

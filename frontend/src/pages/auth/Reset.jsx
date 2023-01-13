@@ -56,11 +56,11 @@ const Reset = () => {
     <div className="hero min-h-screen" style={{background:"var(--color-l-green)"}}>
     <div className="hero-content flex-col " style={{background:"var(--color-l-green)"}}>
       <div className="text-center" style={{background:"var(--color-l-green)", color:"var(--color-black)"}}>
-        <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)"}}>Reset Password!</h1>
-        <p className="py-6" style={{background:"var(--color-l-green)"}}>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)", color:"var(--color-green)"}}>Reset Password!</h1>
+        <p className="py-6" style={{background:"var(--color-l-green)"}}>Kindly input your new password below</p>
       </div>
       <form onSubmit={reset}>
-      <div className="card shadow-2xl" style={{width:'25pc'}} >
+      <div className="card shadow-2xl w-96">
         <div className="card-body ">
         <div className="form-control">
           <label className="label ">

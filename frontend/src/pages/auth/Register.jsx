@@ -67,10 +67,10 @@ const Register = () => {
       {isLoading && <Loader />}
     <div className="hero-content flex-col " style={{background:"var(--color-l-green)"}}>
       <div className="text-center" style={{background:"var(--color-l-green)", color:"var(--color-black)"}}>
-        <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)"}}>Register now!</h1>
+        <h1 className="text-5xl font-bold" style={{background:"var(--color-l-green)", color:"var(--color-green)"}}>Register now!</h1>
         <p className="py-6" style={{background:"var(--color-l-green)"}}>Register with us to keep track of your product</p>
       </div>
-      <div className="card shadow-2xl" style={{width:'25pc'}} >
+      <div className="card shadow-2xl w-96" >
         <div className="card-body ">
         <form onSubmit={register}>
         <div className="form-control " >
@@ -102,7 +102,7 @@ const Register = () => {
         </div>
         </form>
             <Link to="/" className="label-text-alt link link-hover mt-1" style={{fontSize:"12px", color:"var(--color-black)"}}>Home</Link>
-            <p style={{fontSize:"12px"}}> &nbsp;Already have an account? &nbsp; </p>
+            <p style={{fontSize:"12px", fontStyle:"italic"}}> &nbsp;Already have an account? &nbsp; </p>
             <Link to="/login" className="label-text-alt link link-hover " style={{fontSize:"12px", color:"var(--color-black)"}}>Login</Link>
         </div>
     </div>
