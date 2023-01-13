@@ -36,8 +36,8 @@ const home = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div  className="hero-content text-center text-neutral-content" style={{}}>
                 <div  className="">
-                <h1 className='text-5xl font-bold' style={{color:'var(--color-white)'}}>Inventory system to control and manage products records in real time.</h1>
-                <p className="mb-3 mt-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>14 -</span> Brand owners</p>
+                <h1 className='text-4xl font-bold m-10' style={{color:'var(--color-white)'}}>Inventory system to keep, control and manage your products records in real time.</h1>
+                <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>14 -</span> Brand owners</p>
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>23 -</span> Active users</p>
                 <p className="mb-3" style={{color:'var(--color-white)', fontSize:"25px", fontFamily:"fantasy"}}><span style={{fontSize:"35px"}}>50 -</span> Partners</p>
                 <button className="btn" style={{background:"var(--color-l-green)", color:'var(--color-black)'}}>
