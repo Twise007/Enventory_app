@@ -44,6 +44,12 @@ const ProductSummary = ({ products }) => {
       </div>
       <div>
         <InfoBox 
+        icon={categoryIcon} 
+        title={"All Category"} 
+        count={category.length} 
+        />
+        
+        <InfoBox 
         icon={productIcon} 
         title={"Total Products"} 
         count={products.length}  
@@ -53,12 +59,6 @@ const ProductSummary = ({ products }) => {
         icon={outOfStockIcon} 
         title={"Out of Stock"} 
         count={outOfStock} 
-        />
-
-        <InfoBox 
-        icon={categoryIcon} 
-        title={"All Category"} 
-        count={category.length} 
         />
 
         <InfoBox 
