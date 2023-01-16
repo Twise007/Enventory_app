@@ -39,7 +39,7 @@ const ProductSummary = ({ products }) => {
 
   return (
     <div>
-      <div className="navbar bg-primary-content">
+      <div className="navbar bg-primary-content hero">
         <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Stats:</div> 
       </div>
       <div>

@@ -98,12 +98,12 @@ const EditProfile = () => {
         </div>
         {isLoading && <Loader />}
         <>
-        <div className="hero pt-10" style={{background:"var(--color-off-white)",}}>
-            <div className="shadow-2xl" style={{ background:"var(--color-white)"}}>
-                <div className="hero-content flex-col lg:flex-row">
+        <div className="pt-10 " style={{background:"var(--color-off-white)",}}>
+            <div className="p-2" style={{ background:"var(--color-white)"}}>
+                <div className="shadow-2xl">
                     <img src={user?.photo} alt='profilepic' className=" rounded-full shadow-2xl p-5" style={{width:"22pc", height:"22pc", background:"var(--color-l-green)"}}/>
                     
-                    <form onSubmit={saveProfile} className="p-8 shadow-2xl">
+                    <form onSubmit={saveProfile} className="p-4 shadow-2xl">
                         <label className="input-group pt-3">
                             <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"7pc", textTransform:"capitalize"}}>name</span>
                             <input type="text" name='name' value={profile?.name} onChange={handleInputChange} className="input input-bordered" style={{background:"var(--color-l-green)", width:"100%", color:"var(--color-black)",}}/>
@@ -131,10 +131,10 @@ const EditProfile = () => {
                         </label>
 
                         <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
+                        <span>Product Image:</span>
                         <label className="label" style={{color:"var(--color-black)"}}>
-                            <span>Product Image:</span>
+                            <input type="file" className="file-input file-input-bordered" style={{background:"var(--color-l-green)", color:"var(--color-black)"}} onChange={(e) => handleImageChange(e)}/>
                         </label>
-                        <input type="file" className="file-input file-input-bordered mt-2" style={{background:"var(--color-l-green)", color:"var(--color-black)"}} onChange={(e) => handleImageChange(e)}/>
                         <label className="label" style={{color:"var(--color-black)"}}>
                             <span className="label-text-alt">Supported formats: jpg, jpeg, png</span>
                         </label>
@@ -148,8 +148,8 @@ const EditProfile = () => {
         </div>
         </>
 
-        <div className='mt-10 mb-10' style={{border:"2px solid var(--color-green)", background:"var(--color-green)"}}></div>
-        <div className="hero">
+        <div className='mt-10 mb-10 ' style={{border:"2px solid var(--color-green)", background:"var(--color-green)"}}></div>
+        <div className="hero p-2">
             <ChangePassword />
         </div>
     </div>

@@ -76,9 +76,10 @@ const ProductList = ({ products, isLoading }) => {
 
   return (
     <div className='productTable'>
+
       <div className="navbar bg-primary-content mt-5">
-        <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Items</div>
-        <div className="flex-none"><Search value={search} onChange={(e) => setSearch(e.target.value)}/></div>  
+        <div className="flex-1 navbar-start p-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Items</div>
+        <div className="flex-none navbar-end"><Search value={search} onChange={(e) => setSearch(e.target.value)}/></div>  
       </div>
 
       {isLoading && <SpinnerImg />}
@@ -87,10 +88,10 @@ const ProductList = ({ products, isLoading }) => {
       {!isLoading && products.length === 0 ? (
             <p className='noProduct'>-- No product found, please add a product...</p>
           ) : (
-          <table className="table w-full" style={{borderRadius:"10px", color:"var(--color-black)"}}>
+          <table className="table table-compact w-full" style={{borderRadius:"10px", color:"var(--color-black)"}}>
           <thead className='head'>
             <tr>
-              <th>s/n</th> 
+              <td style={{background:"var(--color-green)",color:"var(--color-white)"}}>s/n</td> 
               <th>Name</th> 
               <th>Category</th> 
               <th>Price</th> 
@@ -99,14 +100,14 @@ const ProductList = ({ products, isLoading }) => {
               <th>Action</th>
             </tr>
           </thead> 
-          <tbody className='tdata '>
+          <tbody className='tdata'>
             {currentItems.map((product, index) =>{
                 const {
                   _id, name, category, price, quantity
                 } = product
                 return (
                   <tr key={_id} className="btn-ghost">
-                    <th>{index + 1}</th> 
+                    <td>{index + 1}</td> 
                     <td>{shortenText (name, 16)}</td> 
                     <td>{category}</td> 
                     <td>{"₦"}{price}</td> 
@@ -137,7 +138,7 @@ const ProductList = ({ products, isLoading }) => {
           </tbody> 
           <tfoot className='head'>
             <tr>
-              <th>s/n</th> 
+              <td style={{background:"var(--color-green)",color:"var(--color-white)"}}>s/n</td> 
               <th>Name</th> 
               <th>Category</th> 
               <th>Price</th> 

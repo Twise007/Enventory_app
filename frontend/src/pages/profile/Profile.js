@@ -31,7 +31,7 @@ const Profile = () => {
 
   return (
     <>
-    <div>
+    <div className="">
         <div className="navbar bg-primary-content">
             <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px", borderBottom:"2px solid var(--color-green)"}}>Profile:</div> 
         </div>
@@ -40,38 +40,45 @@ const Profile = () => {
         {!isLoading && profile === null ? (
           <p>Something went wrong, please reload the page...</p>
         ) : (
-        <div className="hero pt-10 pb-10" style={{background:"var(--color-off-white)",}}>
-            <div className="shadow-2xl" style={{ background:"var(--color-white)"}}>
-                <div className="hero-content flex-col lg:flex-row">
+        <div className="pt-10 pb-10" style={{background:"var(--color-off-white)",}}>
+            <div className="shadow-2xl" style={{ background:"var(--color-white)",}}>
+                <div className="p-5">
                     <img src={profile?.photo} alt='profilepic' className=" rounded-full shadow-2xl p-5" style={{width:"22pc", height:"22pc", background:"var(--color-l-green)"}}/>
-                    <div className="p-8 shadow-2xl">
+                    <div className=" shadow-2xl">
+                    <div className="m-2 card"> 
                         <label className="input-group pt-3">
-                            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"7pc", textTransform:"capitalize"}}>name</span>
-                            <p className="p-2" style={{background:"var(--color-l-green)", width:"100%", color:"var(--color-black))", textTransform:"capitalize"}}>{profile?.name}</p>
+                            <span style={{background:"var(--color-green)", color:"var(--color-white)", textTransform:"capitalize"}}>name</span>
+                            <p className="p-2 w-full " style={{background:"var(--color-l-green)", color:"var(--color-black)", textTransform:"capitalize"}}>{profile?.name}</p>
                         </label>
 
-                        <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
-                        <label className="input-group pt-3">
-                            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"7pc", textTransform:"capitalize"}}>email</span>
-                            <p className="p-2" style={{background:"var(--color-l-green)", width:"100%", color:"var(--color-black)"}}>{profile?.email}</p>
-                        </label>
+                            <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
+                            <div className="form-control">
+                            <label className="input-group pt-3">
+                                <span style={{background:"var(--color-green)", color:"var(--color-white)", textTransform:"capitalize"}}>email</span>
+                                <span className="p-2 " style={{background:"var(--color-l-green)", color:"var(--color-black)", textTransform:"capitalize"}}>{profile?.email}</span>
+                            </label>
+                            </div>
 
-                        <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
-                        <label className="input-group pt-3">
-                            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"7pc", textTransform:"capitalize"}}>phone</span>
-                            <p className="p-2" style={{background:"var(--color-l-green)", width:"100%", color:"var(--color-black)", textTransform:"capitalize"}}>{profile?.phone}</p>
-                        </label>
 
-                        <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
-                        <label className="input-group pt-3">
-                            <span style={{background:"var(--color-green)", color:"var(--color-white)", width:"7pc", textTransform:"capitalize"}}>bio</span>
-                            <p className="p-2" style={{background:"var(--color-l-green)", width:"100%", color:"var(--color-black)"}}>{profile?.bio}</p>
-                        </label>
-                        <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
-                        
-                        <Link to="/edit-profile">
-                            <button type='submit' className="btn mt-3" style={{background:"var(--color-green)", color:"var(--color-l-green)"}}>Edit Profile</button>
-                        </Link>
+                            <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
+                            <div className="form-control">
+                            <label className="input-group pt-3">
+                                <span style={{background:"var(--color-green)", color:"var(--color-white)", textTransform:"capitalize"}}>phone</span>
+                                <p className="p-2 w-full " style={{background:"var(--color-l-green)", color:"var(--color-black)", textTransform:"capitalize"}}>{profile?.phone}</p>
+                            </label>
+                            </div>
+
+                            <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
+                            <label className="input-group pt-3">
+                                <span style={{background:"var(--color-green)", color:"var(--color-white)", textTransform:"capitalize"}}>bio</span>
+                                <p className="p-2 w-full " style={{background:"var(--color-l-green)", color:"var(--color-black)", textTransform:"capitalize"}}>{profile?.bio}</p>
+                            </label>
+                            <div style={{borderBottom:"2px solid var(--color-green)"}} className='p-2'/>
+                            
+                            <Link to="/edit-profile">
+                                <button type='submit' className="btn mt-3" style={{background:"var(--color-green)", color:"var(--color-l-green)"}}>Edit Profile</button>
+                            </Link>
+                        </div>
 
                     </div>
                         

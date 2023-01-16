@@ -14,17 +14,17 @@ const ProductForm = ({
   saveProduct,
 }) => {
   return (
-    <div className="hero p-5">
+    <div>
       <form onSubmit={saveProduct}>
-      <div className="card flex-shrink-0 shadow-2xl">
+      <div className="card shadow-2xl">
       <div className="card-body m-5">
-        <div className="form-control m-2 w-96">
+        <div className="form-control m-2 ">
           <label className="label" style={{color:"var(--color-black)"}}>
           <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Image:</span>
           </label>
             <input type="file" className="file-input file-input-bordered mt-2" style={{background:"var(--color-l-green)"}} onChange={(e) => handleImageChange(e)}/>
             {imagePreview != null ? (
-              <div className=" w-96  p-6 shadow-xl">
+              <div className=" hero w-full p-6 shadow-xl">
                 <figure><img src={imagePreview} alt="product" /></figure>
               </div>
             ) : (
@@ -35,8 +35,7 @@ const ProductForm = ({
           </label>   
         </div>
 
-        <div style={{borderBottom:"2px solid var(--color-green)"}}/>
-        
+        <div style={{borderBottom:"2px solid var(--color-green)"}}/>        
         <div className="form-control m-2" style={{color:"var(--color-black)"}}>
           <label className="label" >
           <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Name:</span>
@@ -81,8 +80,7 @@ const ProductForm = ({
         </div>
       
         <div style={{borderBottom:"2px solid var(--color-green)"}}/>
-
-        <div className="p-2" style={{color:"var(--color-black)", minWidth:"30pc", maxWidth:"50pc"}}>
+        <div style={{color:"var(--color-black)"}}>
           <label className="label" >
           <span className="label-text pr-2 pt-1" style={{color:"var(--color-black)", borderBottom:'2px solid var(--color-green)'}}>Product Description:</span>
           </label>
