@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import ProductList from '../../components/product/productList/ProductList'
-import ProductSummary from '../../components/product/productSummary/ProductSummary'
-import useRedirectLoggedOutUser from '../../customHook/useRedirectLoggedOutUser'
-import { selectisLoggedIn } from '../../redux/features/auth/authSlice'
-import { getProducts } from '../../redux/features/product/productSlice'
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import ProductList from "../../components/product/productList/ProductList";
+import ProductSummary from "../../components/product/productSummary/ProductSummary";
+import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
+import { selectisLoggedIn } from "../../redux/features/auth/authSlice";
+import { getProducts } from "../../redux/features/product/productSlice";
 
 const Dashboard = () => {
   useRedirectLoggedOutUser("/login");
@@ -26,13 +25,15 @@ const Dashboard = () => {
     }
   }, [isLoggedIn, isError, message, dispatch]);
 
-
   return (
-    <div style={{background:"var(--color-off-white)"}} className='pb-10 w-full'>
+    <div
+      style={{ background: "var(--color-off-white)" }}
+      className="w-full pb-10"
+    >
       <ProductSummary products={products} />
       <ProductList products={products} isLoading={isLoading} />
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;
