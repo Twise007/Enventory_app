@@ -77,18 +77,18 @@ const ProductList = ({ products, isLoading }) => {
   return (
     <div className='productTable'>
 
-      <div className="navbar bg-primary-content mt-5">
-        <div className="flex-1 navbar-start p-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Items</div>
+      <div className="mt-5 navbar bg-primary-content">
+        <div className="flex-1 p-1 navbar-start" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Items</div>
         <div className="flex-none navbar-end"><Search value={search} onChange={(e) => setSearch(e.target.value)}/></div>  
       </div>
 
       {isLoading && <SpinnerImg />}
 
-      <div className="overflow-x-auto p-8 pt-3">
+      <div className="p-8 pt-3 overflow-x-auto">
       {!isLoading && products.length === 0 ? (
             <p className='noProduct'>-- No product found, please add a product...</p>
           ) : (
-          <table className="table table-compact w-full" style={{borderRadius:"10px", color:"var(--color-black)"}}>
+          <table className="table w-full table-compact" style={{borderRadius:"10px", color:"var(--color-black)"}}>
           <thead className='head'>
             <tr>
               <td style={{background:"var(--color-green)",color:"var(--color-white)"}}>s/n</td> 
@@ -116,17 +116,17 @@ const ProductList = ({ products, isLoading }) => {
                     <td>
                         <div className="avatar icons">
                           <Link to={`/product-detail/${_id}`}>
-                            <div className="mask w-8 h-4">
+                            <div className="w-8 h-4 mask">
                               <AiOutlineEye color={"purple"}
                               />
                             </div>
                           </Link>
                           <Link to={`/edit-product/${_id}`}>
-                            <div className="mask w-8 h-4">
+                            <div className="w-8 h-4 mask">
                               <FaEdit color={"green"}/>
                             </div>
                           </Link>
-                          <div className="mask w-8 h-4">
+                          <div className="w-8 h-4 mask">
                             <FaTrashAlt color={"red"}
                             onClick={() => confirmDelete(_id)}/>
                           </div>
@@ -150,7 +150,7 @@ const ProductList = ({ products, isLoading }) => {
         </table>
         )}
       </div>
-      <div className='hero relative mt-2'>
+      <div className='relative mt-2 hero'>
         <ReactPaginate
             previousLabel="Prev"
             nextLabel="Next"
