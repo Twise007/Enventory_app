@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { SET_LOGIN, SET_NAME } from "../../redux/features/auth/authSlice";
 import Loader from "../../components/loader/Loader";
 
-const initialState = {
+const initialState = { 
   name: "",
   email: "",
   password: "",
@@ -24,7 +24,7 @@ const Register = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setformData({ ...formData, [name]: value });
-  };
+  }; 
 
   const register = async (e) => {
     e.preventDefault();
