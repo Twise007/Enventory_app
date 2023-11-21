@@ -69,26 +69,14 @@ const Contact = () => {
             />
           </label>
 
-          <label className="mt-2 label">
-            <span
-              className="p-1 label-text"
-              style={{
-                color: "var(--color-black)",
-                borderBottom: "2px solid var(--color-green)",
-              }}
-            >
-              Product Price:
-            </span>
-          </label>
-
-          <label className="input-group">
+          <label className="min-w-full mt-2 input-group">
             <textarea
               placeholder="Write here..."
               name="message"
               value={message}
               required
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full max-w-xs p-2 shadow-2xl input input-bordered "
+              className="max-w-xs min-w-[95%] shadow-2xl input input-bordered"
               style={{
                 background: "var(--color-l-green)",
                 color: "var(--color-black)",
@@ -111,15 +99,15 @@ const Contact = () => {
         </form>
 
         <div
-          className="mt-10 mb-10"
+          className="mt-10 mb-5"
           style={{
-            border: "2px solid var(--color-green)",
+            border: "1px solid var(--color-green)",
             background: "var(--color-green)",
           }}
         ></div>
 
         <div
-          className="w-full max-w-xs p-3"
+          className="max-w-xs p-3 min-w-[95%]"
           style={{
             background: "var(--color-green)",
             color: "var(--color-white)",
@@ -160,7 +148,7 @@ const Contact = () => {
             >
               <div>
                 <FaEnvelope className="w-6 h-6" />
-                <span>Tundeoke@gmail.com</span>
+                <span>Tundeoke80@gmail.com</span>
               </div>
             </div>
             <div
@@ -186,7 +174,7 @@ const Contact = () => {
             >
               <div>
                 <FaTwitter className="w-6 h-6" />
-                <span>@Tunde007</span>
+                <span>@Tundeoke007</span>
               </div>
             </div>
           </div>

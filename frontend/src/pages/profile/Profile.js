@@ -29,175 +29,171 @@ const Profile = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <div className="">
-        <div className="navbar bg-primary-content">
-          <div
-            className="flex-1"
-            style={{
-              color: "var(--color-black)",
-              fontSize: "25px",
-              borderBottom: "2px solid var(--color-green)",
-            }}
-          >
-            Profile:
-          </div>
+    <div className="">
+      <div className="navbar bg-primary-content">
+        <div
+          className="flex-1"
+          style={{
+            color: "var(--color-black)",
+            fontSize: "25px",
+            borderBottom: "2px solid var(--color-green)",
+          }}
+        >
+          Profile:
         </div>
-        {isLoading && <SpinnerImg />}
-        <>
-          {!isLoading && profile === null ? (
-            <p>Something went wrong, please reload the page...</p>
-          ) : (
-            <div
-              className="pt-10 pb-10"
-              style={{ background: "var(--color-off-white)" }}
-            >
-              <div
-                className="shadow-2xl"
-                style={{ background: "var(--color-white)" }}
-              >
-                <div className="p-5">
-                  <img
-                    src={profile?.photo}
-                    alt="profilepic"
-                    className="p-5 rounded-full shadow-2xl "
+      </div>
+      {isLoading && <SpinnerImg />}
+      <div className="w-full hero">
+        {!isLoading && profile === null ? (
+          <p>Something went wrong, please reload the page...</p>
+        ) : (
+          <div className="flex flex-col items-center justify-center w-[80%] mt-10">
+            <img
+              src={profile?.photo}
+              alt="profilepic"
+              className="p-2 rounded-full shadow-2xl w-60 h-60"
+              style={{
+                background: "var(--color-l-green)",
+              }}
+            />
+
+            <div className="w-full p-2 mt-5 shadow-xl">
+              <div className="flex justify-between">
+                <label className="pt-3 input-group">
+                  <span
                     style={{
-                      width: "22pc",
-                      height: "22pc",
-                      background: "var(--color-l-green)",
+                      background: "var(--color-green)",
+                      color: "var(--color-white)",
+                      textTransform: "capitalize",
                     }}
-                  />
-                  <div className="shadow-2xl ">
-                    <div className="m-2 card">
-                      <label className="pt-3 input-group">
-                        <span
-                          style={{
-                            background: "var(--color-green)",
-                            color: "var(--color-white)",
-                            textTransform: "capitalize",
-                          }}
-                        >
-                          name
-                        </span>
-                        <p
-                          className="w-full p-2 "
-                          style={{
-                            background: "var(--color-l-green)",
-                            color: "var(--color-black)",
-                            textTransform: "capitalize",
-                          }}
-                        >
-                          {profile?.name}
-                        </p>
-                      </label>
+                  >
+                    name
+                  </span>
+                  <p
+                    className="w-full p-2 "
+                    style={{
+                      background: "var(--color-l-green)",
+                      color: "var(--color-black)",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {profile?.name}
+                  </p>
+                </label>
+                <label className="pt-3 input-group">
+                  <span
+                    style={{
+                      background: "var(--color-green)",
+                      color: "var(--color-white)",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    name
+                  </span>
+                  <p
+                    className="w-full p-2 "
+                    style={{
+                      background: "var(--color-l-green)",
+                      color: "var(--color-black)",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {profile?.name}
+                  </p>
+                </label>
+              </div>
 
-                      <div
-                        style={{ borderBottom: "2px solid var(--color-green)" }}
-                        className="p-2"
-                      />
-                      <div className="form-control">
-                        <label className="pt-3 input-group">
-                          <span
-                            style={{
-                              background: "var(--color-green)",
-                              color: "var(--color-white)",
-                              textTransform: "capitalize",
-                            }}
-                          >
-                            email
-                          </span>
-                          <span
-                            className="p-2 "
-                            style={{
-                              background: "var(--color-l-green)",
-                              color: "var(--color-black)",
-                              textTransform: "capitalize",
-                            }}
-                          >
-                            {profile?.email}
-                          </span>
-                        </label>
-                      </div>
-
-                      <div
-                        style={{ borderBottom: "2px solid var(--color-green)" }}
-                        className="p-2"
-                      />
-                      <div className="form-control">
-                        <label className="pt-3 input-group">
-                          <span
-                            style={{
-                              background: "var(--color-green)",
-                              color: "var(--color-white)",
-                              textTransform: "capitalize",
-                            }}
-                          >
-                            phone
-                          </span>
-                          <p
-                            className="w-full p-2 "
-                            style={{
-                              background: "var(--color-l-green)",
-                              color: "var(--color-black)",
-                              textTransform: "capitalize",
-                            }}
-                          >
-                            {profile?.phone}
-                          </p>
-                        </label>
-                      </div>
-
-                      <div
-                        style={{ borderBottom: "2px solid var(--color-green)" }}
-                        className="p-2"
-                      />
-                      <label className="pt-3 input-group">
-                        <span
-                          style={{
-                            background: "var(--color-green)",
-                            color: "var(--color-white)",
-                            textTransform: "capitalize",
-                          }}
-                        >
-                          bio
-                        </span>
-                        <p
-                          className="w-full p-2 "
-                          style={{
-                            background: "var(--color-l-green)",
-                            color: "var(--color-black)",
-                            textTransform: "capitalize",
-                          }}
-                        >
-                          {profile?.bio}
-                        </p>
-                      </label>
-                      <div
-                        style={{ borderBottom: "2px solid var(--color-green)" }}
-                        className="p-2"
-                      />
-
-                      <Link to="/edit-profile">
-                        <button
-                          type="submit"
-                          className="mt-3 btn"
-                          style={{
-                            background: "var(--color-green)",
-                            color: "var(--color-l-green)",
-                          }}
-                        >
-                          Edit Profile
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
+              <div className="m-2 card">
+                <div className="p-2" />
+                <div className="form-control">
+                  <label className="pt-3 input-group">
+                    <span
+                      style={{
+                        background: "var(--color-green)",
+                        color: "var(--color-white)",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      email
+                    </span>
+                    <span
+                      className="p-2 "
+                      style={{
+                        background: "var(--color-l-green)",
+                        color: "var(--color-black)",
+                        textTransform: "lowerCase",
+                      }}
+                    >
+                      {profile?.email}
+                    </span>
+                  </label>
                 </div>
+
+                <div className="p-2" />
+                <div className="form-control">
+                  <label className="pt-3 input-group">
+                    <span
+                      style={{
+                        background: "var(--color-green)",
+                        color: "var(--color-white)",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      phone
+                    </span>
+                    <p
+                      className="w-full p-2 "
+                      style={{
+                        background: "var(--color-l-green)",
+                        color: "var(--color-black)",
+                      }}
+                    >
+                      {profile?.phone}
+                    </p>
+                  </label>
+                </div>
+
+                <div className="p-2" />
+                <label className="pt-3 input-group">
+                  <span
+                    style={{
+                      background: "var(--color-green)",
+                      color: "var(--color-white)",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    bio
+                  </span>
+                  <p
+                    className="w-full p-2 "
+                    style={{
+                      background: "var(--color-l-green)",
+                      color: "var(--color-black)",
+                    }}
+                  >
+                    {profile?.bio}
+                  </p>
+                </label>
+                <div className="p-2" />
+
+                <Link to="/edit-profile">
+                  <button
+                    type="submit"
+                    className=""
+                    style={{
+                      background: "var(--color-green)",
+                      color: "var(--color-l-green)",
+                    }}
+                  >
+                    Edit Profile
+                  </button>
+                </Link>
               </div>
             </div>
-          )}
-        </>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

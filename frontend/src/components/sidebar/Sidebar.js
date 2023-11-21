@@ -90,6 +90,7 @@ const Sidebar = ({ children }) => {
                   >
                     {menu.name}
                   </span>
+                  
                   {menu.subMenu && open && (
                     <BsChevronDown
                       className={`${subMenuOpen && "rotate-180"}`}

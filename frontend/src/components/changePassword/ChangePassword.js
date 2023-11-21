@@ -37,24 +37,25 @@ const ChangePassword = () => {
 
   return (
     <div
-      className="p-2 m-2 shadow-2xl "
+      className="min-w-full p-2 m-2 rounded shadow-2xl"
       style={{ border: "2px solid var(--color-green)" }}
     >
-      <div className=" bg-primary-content">
+      <div className="mb-2">
         <div
           style={{
             color: "var(--color-black)",
             fontSize: "25px",
-            borderBottom: "2px solid var(--color-green)",
+            borderBottom: "1px solid var(--color-green)",
           }}
         >
           Change Password:
         </div>
       </div>
+
       <form onSubmit={changePass} className="p-2">
         <label className="input-group ">
           <span
-            className="p-1 label-text"
+            className="p-1 px-2 min-w-fit"
             style={{
               background: "var(--color-green)",
               color: "var(--color-white)",
@@ -78,13 +79,10 @@ const ChangePassword = () => {
           />
         </label>
 
-        <div
-          style={{ borderBottom: "2px solid var(--color-green)" }}
-          className="p-2"
-        />
+        <div className="p-2" />
         <label className="input-group ">
           <span
-            className="p-1 label-text"
+            className="p-1 px-2 min-w-fit"
             style={{
               background: "var(--color-green)",
               color: "var(--color-white)",
@@ -108,13 +106,10 @@ const ChangePassword = () => {
           />
         </label>
 
-        <div
-          style={{ borderBottom: "2px solid var(--color-green)" }}
-          className="p-2"
-        />
+        <div className="p-2" />
         <label className="input-group ">
           <span
-            className="p-1 label-text"
+            className="p-1 px-2 min-w-fit"
             style={{
               background: "var(--color-green)",
               color: "var(--color-white)",
@@ -140,7 +135,7 @@ const ChangePassword = () => {
 
         <button
           type="submit"
-          className="mt-3 btn"
+          className="w-full p-2 mt-2 rounded-lg"
           style={{
             background: "var(--color-green)",
             color: "var(--color-l-green)",
