@@ -26,8 +26,8 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <div className="navbar bg-primary-content">
+    <div className="p-2">
+      <div className="mb-2 navbar bg-primary-content">
         <div
           className="flex-1"
           style={{
@@ -40,143 +40,119 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="pl-5">
-        <form onSubmit={sendEmail}>
-          <label className="pt-3 input-group">
-            <span
+      <div className="md:w-[30pc] hero ">
+        <div className="w-full ">
+          <form onSubmit={sendEmail}>
+            <div className="my-2">
+              <span>Subject :</span>
+              <input
+                type="text"
+                name="subject"
+                value={subject}
+                placeholder="Subject"
+                required
+                onChange={(e) => setSubject(e.target.value)}
+                className="outline-none input"
+                style={{
+                  background: "var(--color-l-green)",
+                  width: "100%",
+                  color: "var(--color-black)",
+                }}
+              />
+            </div>
+
+            <div className="my-2">
+              <div>Content :</div>
+              <textarea
+                placeholder="Write here..."
+                name="message"
+                value={message}
+                required
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full mt-1 outline-none input"
+                style={{
+                  background: "var(--color-l-green)",
+                  color: "var(--color-black)",
+                  minHeight: "15pc",
+                  borderRadius: "10px",
+                }}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full p-2 rounded-lg"
               style={{
                 background: "var(--color-green)",
-                color: "var(--color-white)",
-                textTransform: "capitalize",
+                color: "var(--color-l-green)",
               }}
             >
-              Subject
-            </span>
-            <input
-              type="text"
-              name="subject"
-              value={subject}
-              placeholder="Subject"
-              required
-              onChange={(e) => setSubject(e.target.value)}
-              className="w-full max-w-xs input"
-              style={{
-                background: "var(--color-l-green)",
-                width: "100%",
-                color: "var(--color-black)",
-                textTransform: "capitalize",
-              }}
-            />
-          </label>
+              send message
+            </button>
+          </form>
 
-          <label className="min-w-full mt-2 input-group">
-            <textarea
-              placeholder="Write here..."
-              name="message"
-              value={message}
-              required
-              onChange={(e) => setMessage(e.target.value)}
-              className="max-w-xs min-w-[95%] shadow-2xl input input-bordered"
-              style={{
-                background: "var(--color-l-green)",
-                color: "var(--color-black)",
-                minHeight: "15pc",
-                borderRadius: "10px",
-              }}
-            ></textarea>
-          </label>
-
-          <button
-            type="submit"
-            className="mt-3 btn"
+          <div
+            className="my-5"
             style={{
+              border: "1px solid var(--color-green)",
               background: "var(--color-green)",
-              color: "var(--color-l-green)",
             }}
-          >
-            send message
-          </button>
-        </form>
+          ></div>
 
-        <div
-          className="mt-10 mb-5"
-          style={{
-            border: "1px solid var(--color-green)",
-            background: "var(--color-green)",
-          }}
-        ></div>
-
-        <div
-          className="max-w-xs p-3 min-w-[95%]"
-          style={{
-            background: "var(--color-green)",
-            color: "var(--color-white)",
-            borderRadius: "10px",
-          }}
-        >
-          <h3
-            className="mb-2"
+          <div
+            className="p-3 text-gray-500 rounded-lg"
             style={{
-              fontSize: "24px",
-              borderBottom: "2px solid var(--color-white)",
+              background: "var(--color-l-green)",
             }}
           >
-            Our Contact Information:
-          </h3>
-          <p>Fill the form or contat us via other channel listed below</p>
-          <div>
-            <div
-              className="alert"
+            <h3
+              className="mb-2"
               style={{
-                background: "var(--color-green)",
-                border: "none",
-                color: "var(--color-white)",
+                fontSize: "24px",
+                borderBottom: "2px solid var(--color-black)",
               }}
             >
-              <div>
-                <FaPhoneAlt className="w-6 h-6" />
-                <span>+2348102904585</span>
-              </div>
-            </div>
-            <div
-              className="alert"
-              style={{
-                background: "var(--color-green)",
-                border: "none",
-                color: "var(--color-white)",
-              }}
-            >
-              <div>
-                <FaEnvelope className="w-6 h-6" />
-                <span>Tundeoke80@gmail.com</span>
-              </div>
-            </div>
-            <div
-              className="alert"
-              style={{
-                background: "var(--color-green)",
-                border: "none",
-                color: "var(--color-white)",
-              }}
-            >
-              <div>
-                <GoLocation className="w-6 h-6" />
-                <span>Lagos, Nigeria</span>
-              </div>
-            </div>
-            <div
-              className="alert"
-              style={{
-                background: "var(--color-green)",
-                border: "none",
-                color: "var(--color-white)",
-              }}
-            >
-              <div>
-                <FaTwitter className="w-6 h-6" />
-                <span>@Tundeoke007</span>
-              </div>
-            </div>
+              Our Contact Information:
+            </h3>
+            <p>Fill the form or contact us via other channel listed below</p>
+
+            <ul>
+              <li className="pt-2">
+                <div className="flex items-center gap-4">
+                  <i>
+                    <FaPhoneAlt className="w-4 h-4 text-black" />
+                  </i>
+                  <p>+2348102904585</p>
+                </div>
+              </li>
+
+              <li className="pt-2">
+                <div className="flex items-center gap-4">
+                  <i>
+                    <FaEnvelope className="w-4 h-4 text-yellow-400" />
+                  </i>
+                  <p>Tundeoke80@gmail.com</p>
+                </div>
+              </li>
+
+              <li className="pt-2">
+                <div className="flex items-center gap-4">
+                  <i>
+                    <GoLocation className="w-4 h-4 text-green-600" />
+                  </i>
+                  <p>Lagos, Nigeria</p>
+                </div>
+              </li>
+
+              <li className="pt-2">
+                <div className="flex items-center gap-4">
+                  <i>
+                    <FaTwitter className="w-4 h-4 text-blue-400" />
+                  </i>
+                  <p>@Tundeoke007</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -43,152 +43,49 @@ const Profile = () => {
         </div>
       </div>
       {isLoading && <SpinnerImg />}
-      <div className="w-full hero">
+      <div className="w-full pl-2 hero">
         {!isLoading && profile === null ? (
           <p>Something went wrong, please reload the page...</p>
         ) : (
-          <div className="flex flex-col items-center justify-center w-[80%] mt-10">
+          <div className="flex flex-col items-center justify-center md:w-[80%] md:mt-10  w-full">
             <img
               src={profile?.photo}
               alt="profilepic"
-              className="p-2 rounded-full shadow-2xl w-60 h-60"
+              className="w-40 h-40 rounded-full shadow-2xl md:p-2 md:w-60 md:h-60"
               style={{
                 background: "var(--color-l-green)",
               }}
             />
 
-            <div className="w-full p-2 mt-5 shadow-xl">
-              <div className="flex justify-between">
-                <label className="pt-3 input-group">
-                  <span
-                    style={{
-                      background: "var(--color-green)",
-                      color: "var(--color-white)",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    name
-                  </span>
-                  <p
-                    className="w-full p-2 "
-                    style={{
-                      background: "var(--color-l-green)",
-                      color: "var(--color-black)",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {profile?.name}
-                  </p>
-                </label>
-                <label className="pt-3 input-group">
-                  <span
-                    style={{
-                      background: "var(--color-green)",
-                      color: "var(--color-white)",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    name
-                  </span>
-                  <p
-                    className="w-full p-2 "
-                    style={{
-                      background: "var(--color-l-green)",
-                      color: "var(--color-black)",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {profile?.name}
-                  </p>
-                </label>
-              </div>
-
-              <div className="m-2 card">
-                <div className="p-2" />
-                <div className="form-control">
-                  <label className="pt-3 input-group">
-                    <span
-                      style={{
-                        background: "var(--color-green)",
-                        color: "var(--color-white)",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      email
-                    </span>
-                    <span
-                      className="p-2 "
-                      style={{
-                        background: "var(--color-l-green)",
-                        color: "var(--color-black)",
-                        textTransform: "lowerCase",
-                      }}
-                    >
-                      {profile?.email}
-                    </span>
-                  </label>
+            <div
+              className="w-full p-2 mt-2 text-black capitalize md:text-center rounded-xl"
+              style={{
+                background: "var(--color-l-green)",
+              }}
+            >
+              <div className="items-center justify-center gap-2 my-2 md:flex md:justify-around">
+                <div className="w-full p-2 bg-white rounded-xl">
+                  {profile?.name}
                 </div>
-
-                <div className="p-2" />
-                <div className="form-control">
-                  <label className="pt-3 input-group">
-                    <span
-                      style={{
-                        background: "var(--color-green)",
-                        color: "var(--color-white)",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      phone
-                    </span>
-                    <p
-                      className="w-full p-2 "
-                      style={{
-                        background: "var(--color-l-green)",
-                        color: "var(--color-black)",
-                      }}
-                    >
-                      {profile?.phone}
-                    </p>
-                  </label>
+                <div className="w-full p-2 mt-2 bg-white md:mt-0 rounded-xl">
+                  {profile?.phone}
                 </div>
-
-                <div className="p-2" />
-                <label className="pt-3 input-group">
-                  <span
-                    style={{
-                      background: "var(--color-green)",
-                      color: "var(--color-white)",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    bio
-                  </span>
-                  <p
-                    className="w-full p-2 "
-                    style={{
-                      background: "var(--color-l-green)",
-                      color: "var(--color-black)",
-                    }}
-                  >
-                    {profile?.bio}
-                  </p>
-                </label>
-                <div className="p-2" />
-
-                <Link to="/edit-profile">
-                  <button
-                    type="submit"
-                    className=""
-                    style={{
-                      background: "var(--color-green)",
-                      color: "var(--color-l-green)",
-                    }}
-                  >
-                    Edit Profile
-                  </button>
-                </Link>
               </div>
+              <h1 className="w-full p-2 bg-white rounded-xl">
+                {profile?.email}
+              </h1>
+              <Link to="/edit-profile">
+                <button
+                  type="submit"
+                  className="w-full py-2 my-2 rounded-xl"
+                  style={{
+                    background: "var(--color-green)",
+                    color: "var(--color-l-green)",
+                  }}
+                >
+                  Edit Profile
+                </button>
+              </Link>
             </div>
           </div>
         )}

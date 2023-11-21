@@ -62,22 +62,33 @@ const AddProduct = () => {
 
   return (
     <div>
-        {isLoading && <Loader />}
-        <div className="navbar bg-primary-content">
-          <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px", borderBottom:"2px solid var(--color-green)"}}>Add Product:</div> 
+      {isLoading && <Loader />}
+      <div className="navbar bg-primary-content">
+        <div
+          className="flex-1"
+          style={{
+            color: "var(--color-black)",
+            fontSize: "25px",
+            borderBottom: "2px solid var(--color-green)",
+          }}
+        >
+          Add Product:
         </div>
+      </div>
+      <div className="hero">
         <ProductForm
-        product={product}
-        productImage={productImage}
-        imagePreview={imagePreview}
-        description={description}
-        setDescription={setDescription}
-        handleInputChange={handleInputChange}
-        handleImageChange={handleImageChange}
-        saveProduct={saveProduct}
-      />
+          product={product}
+          productImage={productImage}
+          imagePreview={imagePreview}
+          description={description}
+          setDescription={setDescription}
+          handleInputChange={handleInputChange}
+          handleImageChange={handleImageChange}
+          saveProduct={saveProduct}
+        />
+      </div>
     </div>
-  )
+  );
 }
 
 export default AddProduct

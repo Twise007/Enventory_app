@@ -37,8 +37,11 @@ const ChangePassword = () => {
 
   return (
     <div
-      className="min-w-full p-2 m-2 rounded shadow-2xl"
-      style={{ border: "2px solid var(--color-green)" }}
+      className="p-2 m-2 rounded-lg md:w-[30pc]"
+      style={{
+        background: "var(--color-l-green)",
+        color: "var(--color-black)",
+      }}
     >
       <div className="mb-2">
         <div
@@ -53,85 +56,53 @@ const ChangePassword = () => {
       </div>
 
       <form onSubmit={changePass} className="p-2">
-        <label className="input-group ">
-          <span
-            className="p-1 px-2 min-w-fit"
-            style={{
-              background: "var(--color-green)",
-              color: "var(--color-white)",
-              textTransform: "capitalize",
-            }}
-          >
-            Old Password
-          </span>
+        <div className="my-2">
+          <span>Old Password :</span>
           <input
-            type="password"
+            type="text"
             placeholder="Old Password"
             name="oldPassword"
             value={oldPassword}
             onChange={handleInputChange}
-            className="input input-bordered"
+            className="bg-white outline-none input input-bordered"
             style={{
-              background: "var(--color-l-green)",
               width: "100%",
               color: "var(--color-black)",
             }}
           />
-        </label>
+        </div>
 
-        <div className="p-2" />
-        <label className="input-group ">
-          <span
-            className="p-1 px-2 min-w-fit"
-            style={{
-              background: "var(--color-green)",
-              color: "var(--color-white)",
-              textTransform: "capitalize",
-            }}
-          >
-            New Password
-          </span>
+        <div className="my-2">
+          <span>New Password :</span>
           <input
-            type="password"
+            type="text"
             placeholder="New Password"
             name="password"
             value={password}
             onChange={handleInputChange}
-            className="input input-bordered"
+            className="bg-white outline-none input input-bordered"
             style={{
-              background: "var(--color-l-green)",
               width: "100%",
               color: "var(--color-black)",
             }}
           />
-        </label>
+        </div>
 
-        <div className="p-2" />
-        <label className="input-group ">
-          <span
-            className="p-1 px-2 min-w-fit"
-            style={{
-              background: "var(--color-green)",
-              color: "var(--color-white)",
-              textTransform: "capitalize",
-            }}
-          >
-            Confirm Password
-          </span>
+        <div className="my-2">
+          <span>Confirm Password :</span>
           <input
-            type="password"
+            type="text"
             placeholder="Confirm Password"
             name="password2"
             value={password2}
             onChange={handleInputChange}
-            className="input input-bordered"
+            className="bg-white outline-none input input-bordered"
             style={{
-              background: "var(--color-l-green)",
               width: "100%",
               color: "var(--color-black)",
             }}
           />
-        </label>
+        </div>
 
         <button
           type="submit"
