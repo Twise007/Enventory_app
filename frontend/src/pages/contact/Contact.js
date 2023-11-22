@@ -149,7 +149,7 @@ const Contact = () => {
                   <i>
                     <FaTwitter className="w-4 h-4 text-blue-400" />
                   </i>
-                  <p>@Tundeoke007</p>
+                  <p>twittwer.com/@Tundeoke007</p>
                 </div>
               </li>
             </ul>
