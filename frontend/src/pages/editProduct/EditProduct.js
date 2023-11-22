@@ -73,34 +73,49 @@ const EditProduct = () => {
 
   return (
     <div>
-        {isLoading && <Loader />}
-        <div className="navbar bg-primary-content">
-          <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px", borderBottom:"2px solid var(--color-green)"}}>Edit Product: 
-          <Link to='/dashboard'>
-          <div className="alert p-0 ml-2 mb-1 " style={{borderRadius:"none", fontSize:"20px", background:"var(--color-white)"}}>
-            <div className="hover:bg-[var(--color-l-green)] rounded-md p-2">
-              <TiArrowBackOutline  style={{color:"var(--color-green)"}}/>
-              <span style={{color:"var(--color-black)"}}>Go back</span> 
+      {isLoading && <Loader />}
+      <div className="navbar bg-primary-content">
+        <div
+          className="flex-1"
+          style={{
+            color: "var(--color-black)",
+            fontSize: "25px",
+            borderBottom: "2px solid var(--color-green)",
+          }}
+        >
+          Edit Product:
+          <Link to="/dashboard">
+            <div
+              className="p-0 mb-1 ml-2 alert "
+              style={{
+                borderRadius: "none",
+                fontSize: "20px",
+                background: "var(--color-white)",
+              }}
+            >
+              <div className="hover:bg-[var(--color-l-green)] rounded-md p-2">
+                <TiArrowBackOutline style={{ color: "var(--color-green)" }} />
+                <span style={{ color: "var(--color-black)" }}>Go back</span>
+              </div>
             </div>
-          </div>
           </Link>
-          </div> 
         </div>
+      </div>
 
-
-
+      <div className="hero">
         <ProductForm
-        product={product}
-        productImage={productImage}
-        imagePreview={imagePreview}
-        description={description}
-        setDescription={setDescription}
-        handleInputChange={handleInputChange}
-        handleImageChange={handleImageChange}
-        saveProduct={saveProduct}
-      />
+          product={product}
+          productImage={productImage}
+          imagePreview={imagePreview}
+          description={description}
+          setDescription={setDescription}
+          handleInputChange={handleInputChange}
+          handleImageChange={handleImageChange}
+          saveProduct={saveProduct}
+        />
+      </div>
     </div>
-  )
+  );
 }
 
 export default EditProduct

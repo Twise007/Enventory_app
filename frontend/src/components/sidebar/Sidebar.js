@@ -13,7 +13,7 @@ const Sidebar = ({ children }) => {
     <div className="flex w-full h-screen">
       <div
         className={`h-screen bg-c-l-green ${
-          open ? "w-72" : "w-20"
+          open ? "w-48" : "w-16"
         } relative duration-500 `}
       >
         <div className="p-3 bg-bg-green">
@@ -40,7 +40,7 @@ const Sidebar = ({ children }) => {
                 style={{ color: "var(--color-green)" }}
               />
               <h1
-                className={`text-white origin-left font-meduim text-2xl duration-500 ${
+                className={`text-white origin-left text-2xl duration-500 ${
                   !open && "scale-0"
                 }`}
               >
@@ -69,8 +69,8 @@ const Sidebar = ({ children }) => {
                     </div>
                   </span>
                   <span
-                    className={`text-base font-meduim duration-500 ${
-                      !open && "opacity-0 translate-x-28 overflow-hidden"
+                    className={`text-base duration-500 ${
+                      !open && "opacity-0 translate-x-24 overflow-hidden"
                     }`}
                     style={{
                       transitionDelay: `${index + 3}00ms`,
@@ -90,29 +90,7 @@ const Sidebar = ({ children }) => {
                   >
                     {menu.name}
                   </span>
-                  
-                  {menu.subMenu && open && (
-                    <BsChevronDown
-                      className={`${subMenuOpen && "rotate-180"}`}
-                      onClick={() => setSubMenuOpen(!subMenuOpen)}
-                    />
-                  )}
                 </li>
-
-                {menu.subMenu && subMenuOpen && open && (
-                  <ul className="m-4 rounded-md shadow4xl glass">
-                    {menu.subMenu.map((subMenu, index) => (
-                      <Link to={subMenu.link} key={index}>
-                        <li
-                          className="text-sm flex items-center cursor-pointer hover:bg-[#f5f5f5] hover:rounded-md m-1 p-2 "
-                          style={{ color: "var(--color-black)" }}
-                        >
-                          {subMenu.name}
-                        </li>
-                      </Link>
-                    ))}
-                  </ul>
-                )}
               </Link>
             ))}
           </ul>

@@ -116,7 +116,7 @@ const Contact = () => {
             </h3>
             <p>Fill the form or contact us via other channel listed below</p>
 
-            <ul>
+            <ul className="text-black">
               <li className="pt-2">
                 <div className="flex items-center gap-4">
                   <i>

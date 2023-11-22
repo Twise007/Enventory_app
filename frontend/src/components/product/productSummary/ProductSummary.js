@@ -3,6 +3,8 @@ import { AiFillDollarCircle } from "react-icons/ai";
 import { BsCart4, BsCartX } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import InfoBox from "../../infoBox/InfoBox";
+import styled from "../../../styles.module.css";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   CALC_CATEGORY,
@@ -36,40 +38,43 @@ const ProductSummary = ({ products }) => {
     dispatch(CALC_CATEGORY(products));
   }, [dispatch, products]);
 
-
   return (
     <div>
       <div className="navbar bg-primary-content hero">
-        <div className="flex-1" style={{color:"var(--color-black)", fontSize:"25px"}}>Inventory Stats:</div> 
+        <div
+          className="flex-1"
+          style={{ color: "var(--color-black)", fontSize: "25px" }}
+        >
+          Inventory Stats:
+        </div>
       </div>
-      <div>
-        <InfoBox 
-        icon={categoryIcon} 
-        title={"All Category"} 
-        count={category.length} 
-        />
-        
-        <InfoBox 
-        icon={productIcon} 
-        title={"Total Products"} 
-        count={products.length}  
+      <div className={`${styled.columnBox} gap-2 p-2`}>
+        <InfoBox
+          icon={categoryIcon}
+          title={"All Category"}
+          count={category.length}
         />
 
-        <InfoBox 
-        icon={outOfStockIcon} 
-        title={"Out of Stock"} 
-        count={outOfStock} 
+        <InfoBox
+          icon={productIcon}
+          title={"Total Products"}
+          count={products.length}
         />
 
-        <InfoBox 
-        icon={earningIcon} 
-        title={"Total Store Value"} 
-        count={`₦${formatNumbers(totalStoreValue.toFixed(2))}  `}
+        <InfoBox
+          icon={outOfStockIcon}
+          title={"Out of Stock"}
+          count={outOfStock}
         />
 
+        <InfoBox
+          icon={earningIcon}
+          title={"Total Store Value"}
+          count={`₦ ${formatNumbers(totalStoreValue.toFixed(2))}  `}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductSummary
+export default ProductSummary;
