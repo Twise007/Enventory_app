@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsArrowLeftCircle, BsChevronDown } from "react-icons/bs";
+import { BsArrowLeftCircle } from "react-icons/bs";
 
 import { TfiBookmarkAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";

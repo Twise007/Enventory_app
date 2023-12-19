@@ -8,7 +8,7 @@ const InfoBox = ({ title, count, icon }) => {
     >
       <div className="p-2">
         <div className="flex items-center justify-between">
-          <p style={{ color: " var(--color-green)" }}>{title}</p>
+          <p style={{ color: "var(--color-green)" }}>{title}</p>
           <i>{icon}</i>
         </div>
         <div className="text-2xl text-black">{count}</div>
